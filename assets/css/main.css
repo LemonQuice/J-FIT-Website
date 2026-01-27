@@ -2983,3 +2983,94 @@ input, select, textarea {
 						}
 
 	}
+/* Extra CSS voor Aanbod Pagina - Voeg dit toe aan het einde van main.css */
+
+/* Pricing Packages */
+#highlights .highlight {
+    background: #3498db url("images/overlay.png");
+    padding: 2.5em;
+    border-radius: 0.5em;
+    text-align: center;
+    color: #fff;
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#highlights .highlight h3 {
+    color: #fff !important;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+}
+
+#highlights .highlight .price {
+    font-size: 2.5em;
+    font-weight: 900;
+    color: #fff;
+    margin: 0.5em 0 1.5em 0;
+    letter-spacing: 0.05em;
+}
+
+#highlights .highlight .package-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2em 0;
+    text-align: left;
+    flex-grow: 1;
+}
+
+#highlights .highlight .package-features li {
+    padding: 0.75em 0;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95em;
+    line-height: 1.5em;
+}
+
+#highlights .highlight .package-features li:first-child {
+    border-top: solid 1px rgba(255, 255, 255, 0.2);
+}
+
+#highlights .highlight .package-features li:before {
+    content: "✓ ";
+    color: #fff;
+    font-weight: 900;
+    margin-right: 0.5em;
+}
+
+#highlights .highlight .actions {
+    margin: 0;
+}
+
+#highlights .highlight .button {
+    background: #fff;
+    color: #3498db;
+    font-weight: 900;
+    width: 100%;
+}
+
+#highlights .highlight .button:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: #2980b9;
+}
+
+/* Responsive aanpassingen */
+@media screen and (max-width: 980px) {
+    #highlights .highlight {
+        min-height: auto;
+        margin-bottom: 2em;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    #highlights .highlight .price {
+        font-size: 2em;
+    }
+    
+    #highlights .highlight h3 {
+        font-size: 1.3em;
+    }
+}
