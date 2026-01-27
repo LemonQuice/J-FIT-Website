@@ -3074,3 +3074,34 @@ input, select, textarea {
         font-size: 1.3em;
     }
 }
+/* Custom Intro Styling - Betere tekstweergave */
+#intro .container p {
+    margin-bottom: 1.5em;
+}
+
+#intro p.style1 {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1em;
+    line-height: 1.4em;
+    text-transform: none;
+}
+
+#intro p.intro-main {
+    font-size: 1.15em;
+    line-height: 1.8em;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    margin: 0 auto 1.5em auto;
+    font-weight: 400;
+}
+
+#intro p.intro-tagline {
+    font-size: 1.1em;
+    line-height: 1.6em;
+    color: rgba(255, 255, 255, 0.85);
+    font-style: italic;
+    max-width: 700px;
+    margin: 0 auto 2em auto;
+}
