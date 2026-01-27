@@ -3035,7 +3035,7 @@ input, select, textarea {
 }
 
 #highlights .highlight .package-features li:before {
-    content: "✓";
+    content: "✓ ";
     color: #fff;
     font-weight: 900;
     margin-right: 0.5em;
