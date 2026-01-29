@@ -3109,6 +3109,18 @@ input, select, textarea {
 html {
     scroll-behavior: smooth;
 }
-.bg-lightblue {
-    background-color: #E1EFF9;
+/* Wrapper Style 4 – Lichtblauw (#E1EFF9) */
+.wrapper.style4 {
+    background: #E1EFF9;
 }
+
+.wrapper.style4 .title {
+    background: #E1EFF9;
+    color: #484d55; /* zelfde tekstkleur als style2 & style3 */
+}
+
+/* Optioneel: als je afbeeldingen in deze wrapper ook een border wilt geven zoals style3 */
+.wrapper.style4 .image {
+    border: solid 10px #fff;
+}
+
