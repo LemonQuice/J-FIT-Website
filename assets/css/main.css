@@ -3109,3 +3109,6 @@ input, select, textarea {
 html {
     scroll-behavior: smooth;
 }
+.bg-lightblue {
+    background-color: #E1EFF9;
+}
