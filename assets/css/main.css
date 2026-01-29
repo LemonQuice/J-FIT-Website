@@ -3105,3 +3105,7 @@ input, select, textarea {
     max-width: 700px;
     margin: 0 auto 2em auto;
 }
+/* Smooth Scrolling voor anchor links */
+html {
+    scroll-behavior: smooth;
+}
