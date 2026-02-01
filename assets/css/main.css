@@ -3122,3 +3122,33 @@ input, select, textarea {
 html {
     scroll-behavior: smooth;
 }
+
+
+
+/* Alleen voor de Studio / aan huis prijzen */
+#pricing-studio .row.aln-center > .col-4 {
+    display: flex;
+    flex-direction: column; /* Kolommen vullen hun hoogte */
+}
+
+#pricing-studio .row.aln-center > .col-4 > .highlight {
+    flex: 1; /* Zorgt dat alle highlight-boxen even hoog worden */
+}
+
+/* Middelste kolom schaal visueel, origine top zodat hij niet “zakt” */
+#pricing-studio .row.aln-center > .col-4:nth-child(2) .highlight {
+    transform-origin: top;
+}
+
+#pricing-aanHuis .row.aln-center > .col-4 {
+    display: flex;
+    flex-direction: column;
+}
+
+#pricing-aanHuis .row.aln-center > .col-4 > .highlight {
+    flex: 1;
+}
+
+#pricing-aanHuis .row.aln-center > .col-4:nth-child(2) .highlight {
+    transform-origin: top;
+}
