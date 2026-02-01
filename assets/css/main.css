@@ -3235,11 +3235,6 @@ html {
     font-size: 1.05em;
 }
 
-
-
-
-
-
 /* HEADER BACKGROUND POSITIONING */
 
 /* Alleen voor NIET-homepage (andere pagina's) */
@@ -3256,5 +3251,79 @@ body:not(.homepage) #header {
 @media screen and (max-width: 736px) {
     body:not(.homepage) #header {
         background-position: center 25% !important;
+    }
+}
+
+
+
+
+
+/* TARIEF PAGINA TAB KNOBBEN - RESPONSIVE FIX */
+
+/* Container voor tab knoppen */
+#tarieven-pakketten > .container > div:first-child {
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 5px 0;
+}
+
+#tarieven-pakketten > .container > div:first-child > div {
+    display: inline-flex;
+    min-width: min-content;
+    white-space: nowrap;
+}
+
+/* Tab knoppen responsive */
+#tarieven-pakketten button {
+    padding: 12px 20px !important;
+    font-size: 1em !important;
+    min-width: 180px;
+    white-space: nowrap;
+}
+
+/* Media queries voor betere responsive */
+@media screen and (max-width: 736px) {
+    #tarieven-pakketten > .container > div:first-child {
+        margin-bottom: 2em;
+    }
+    
+    #tarieven-pakketten > .container > div:first-child > div {
+        padding: 5px;
+    }
+    
+    #tarieven-pakketten button {
+        padding: 10px 15px !important;
+        font-size: 0.9em !important;
+        min-width: 150px;
+        margin: 0 3px !important;
+    }
+    
+    /* Zorg dat de knoppen altijd in het balkje blijven */
+    #tarieven-pakketten > .container > div:first-child > div {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #tarieven-pakketten button {
+        padding: 8px 12px !important;
+        font-size: 0.85em !important;
+        min-width: 140px;
+        margin: 0 2px !important;
+    }
+}
+
+/* Zorg dat de balk zich aanpast aan kleinere schermen */
+@media screen and (max-width: 736px) {
+    #tarieven-pakketten > .container > div:first-child > div {
+        background: #f5f5f5;
+        border-radius: 30px;
+        padding: 6px;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
     }
 }
