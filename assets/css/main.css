@@ -3123,4 +3123,100 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Feature List Equal Height Sections */
+.feature-list .row {
+    display: flex;
+    flex-wrap: wrap;
+}
 
+.feature-list .row .col-4 {
+    display: flex;
+}
+
+.feature-list .row section {
+    border-top: none !important;
+    padding-top: 0 !important;
+    padding-left: 5em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.feature-list h3 {
+    color: #3498db !important;
+    margin: -0.35em 0 0.75em 0;
+    font-size: 1.15em;
+    letter-spacing: 0.05em;
+    min-height: 2.8em;
+}
+
+.feature-list h3:before {
+    display: block;
+    color: #fff;
+    background: #2f333b url("images/overlay.png");
+    border-radius: 2.5em;
+    text-align: center;
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+    margin-right: 0.75em;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.feature-list p {
+    flex-grow: 1;
+    margin-bottom: 0;
+    line-height: 1.6em;
+}
+
+/* Tarieven pagina specifieke aanpassingen */
+#info-studio .feature-list section,
+#info-aanHuis .feature-list section {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 2em 1.5em 1.5em 5em;
+    margin: 0.5em;
+    border: 1px solid #e9ecef;
+}
+
+#info-studio .feature-list h3:before,
+#info-aanHuis .feature-list h3:before {
+    top: 2em;
+    left: 1.5em;
+}
+
+/* Responsive aanpassingen */
+@media screen and (max-width: 980px) {
+    .feature-list .row .col-4 {
+        width: 100%;
+        margin-bottom: 2em;
+    }
+    
+    #info-studio .feature-list section,
+    #info-aanHuis .feature-list section {
+        padding-left: 5em;
+        padding-right: 1.5em;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .feature-list section {
+        padding-left: 4em !important;
+    }
+    
+    #info-studio .feature-list section,
+    #info-aanHuis .feature-list section {
+        padding: 1.5em 1em 1em 4em;
+    }
+    
+    .feature-list h3:before {
+        font-size: 0.9em;
+        width: 2.2em;
+        height: 2.2em;
+        line-height: 2.2em;
+    }
+}
