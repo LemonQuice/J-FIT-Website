@@ -3123,100 +3123,148 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Feature List Equal Height Sections */
-.feature-list .row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
+/* Feature List zonder kaders en met betere uitlijning */
 .feature-list .row .col-4 {
-    display: flex;
+    display: block; /* Verwijder flex voor deze context */
 }
 
 .feature-list .row section {
     border-top: none !important;
-    padding-top: 0 !important;
+    padding-top: 0.5em !important;
     padding-left: 5em;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    display: block;
+    height: auto;
     width: 100%;
+    background: transparent !important; /* Geen achtergrond */
+    border: none !important; /* Geen border */
+    border-radius: 0 !important; /* Geen radius */
+    margin: 0.5em 0 !important; /* Normale margin */
+    padding-right: 0 !important; /* Geen extra padding */
 }
 
 .feature-list h3 {
-    color: #3498db !important;
-    margin: -0.35em 0 0.75em 0;
-    font-size: 1.15em;
-    letter-spacing: 0.05em;
-    min-height: 2.8em;
+    color: #484d55 !important; /* Donkere kleur voor betere leesbaarheid */
+    margin: 0 0 0.5em 0 !important; /* Consistentie margin */
+    font-size: 1.3em !important;
+    letter-spacing: 0.03em;
+    line-height: 1.4em;
+    font-weight: 700;
+    position: relative;
+    padding-top: 0.2em; /* Ruimte voor icoon */
 }
 
 .feature-list h3:before {
     display: block;
     color: #fff;
-    background: #2f333b url("images/overlay.png");
-    border-radius: 2.5em;
+    background: #3498db; /* Blauwe achtergrond ipv donker grijs */
+    border-radius: 50%;
     text-align: center;
-    width: 2.5em;
-    height: 2.5em;
-    line-height: 2.5em;
-    margin-right: 0.75em;
+    width: 2.2em;
+    height: 2.2em;
+    line-height: 2.2em;
     position: absolute;
-    left: 0;
+    left: -3.2em; /* Positie aanpassen */
     top: 0;
+    margin-top: 0;
+    font-size: 0.9em;
+    box-shadow: 0 2px 5px rgba(52, 152, 219, 0.3);
 }
 
 .feature-list p {
-    flex-grow: 1;
-    margin-bottom: 0;
-    line-height: 1.6em;
+    flex-grow: 0;
+    margin-bottom: 1em;
+    line-height: 1.7em;
+    color: #666;
+    font-size: 1.05em;
 }
 
-/* Tarieven pagina specifieke aanpassingen */
+/* Tarieven pagina specifieke aanpassingen - verwijder alle speciale stijlen */
 #info-studio .feature-list section,
 #info-aanHuis .feature-list section {
-    background: #f8f9fa;
-    border-radius: 8px;
-    padding: 2em 1.5em 1.5em 5em;
-    margin: 0.5em;
-    border: 1px solid #e9ecef;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0.5em 0 1em 5em !important;
+    margin: 0.5em 0 !important;
+    box-shadow: none !important;
 }
 
 #info-studio .feature-list h3:before,
 #info-aanHuis .feature-list h3:before {
-    top: 2em;
-    left: 1.5em;
+    top: 0;
+    left: 0;
+    margin-left: 0;
+}
+
+/* Zorg dat alle 3 secties dezelfde hoogte hebben zonder kaders */
+.feature-list .row {
+    align-items: stretch; /* Gelijk trekken */
+}
+
+.feature-list .col-4 {
+    margin-bottom: 2em;
+}
+
+.feature-list .col-4 section {
+    height: 100%;
+    min-height: 180px; /* Minimale hoogte voor consistentie */
 }
 
 /* Responsive aanpassingen */
+@media screen and (max-width: 1280px) {
+    .feature-list h3 {
+        font-size: 1.2em !important;
+    }
+    
+    .feature-list p {
+        font-size: 1em;
+    }
+}
+
 @media screen and (max-width: 980px) {
     .feature-list .row .col-4 {
         width: 100%;
-        margin-bottom: 2em;
+        margin-bottom: 2.5em;
     }
     
-    #info-studio .feature-list section,
-    #info-aanHuis .feature-list section {
-        padding-left: 5em;
-        padding-right: 1.5em;
+    .feature-list .col-4 section {
+        min-height: auto; /* Geen minimale hoogte op mobiel */
+    }
+    
+    .feature-list section {
+        padding-left: 4em !important;
+    }
+    
+    .feature-list h3:before {
+        left: -2.8em;
+        width: 2em;
+        height: 2em;
+        line-height: 2em;
     }
 }
 
 @media screen and (max-width: 736px) {
     .feature-list section {
-        padding-left: 4em !important;
+        padding-left: 3.5em !important;
+        padding-right: 0 !important;
     }
     
-    #info-studio .feature-list section,
-    #info-aanHuis .feature-list section {
-        padding: 1.5em 1em 1em 4em;
+    .feature-list h3 {
+        font-size: 1.15em !important;
+        padding-top: 0.1em;
     }
     
     .feature-list h3:before {
-        font-size: 0.9em;
-        width: 2.2em;
-        height: 2.2em;
-        line-height: 2.2em;
+        left: -2.5em;
+        width: 1.8em;
+        height: 1.8em;
+        line-height: 1.8em;
+        font-size: 0.8em;
+    }
+    
+    .feature-list p {
+        font-size: 0.95em;
+        line-height: 1.6em;
     }
 }
