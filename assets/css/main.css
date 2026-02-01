@@ -3179,6 +3179,62 @@ html {
     font-size: 1.05em;
 }
 
+/* Feature List zonder kaders en met betere uitlijning */
+.feature-list .row .col-4 {
+    display: block; /* Verwijder flex voor deze context */
+}
+
+.feature-list .row section {
+    border-top: none !important;
+    padding-top: 0.5em !important;
+    padding-left: 5em;
+    position: relative;
+    display: block;
+    height: auto;
+    width: 100%;
+    background: transparent !important; /* Geen achtergrond */
+    border: none !important; /* Geen border */
+    border-radius: 0 !important; /* Geen radius */
+    margin: 0.5em 0 !important; /* Normale margin */
+    padding-right: 0 !important; /* Geen extra padding */
+}
+
+.feature-list h3 {
+    color: #484d55 !important; /* Donkere kleur voor betere leesbaarheid */
+    margin: 0 0 0.5em 0 !important; /* Consistentie margin */
+    font-size: 1.3em !important;
+    letter-spacing: 0.03em;
+    line-height: 1.4em;
+    font-weight: 700;
+    position: relative;
+    padding-top: 0.2em; /* Ruimte voor icoon */
+}
+
+.feature-list h3:before {
+    display: block;
+    color: #fff;
+    background: #3498db; /* Blauwe achtergrond ipv donker grijs */
+    border-radius: 50%;
+    text-align: center;
+    width: 2.2em;
+    height: 2.2em;
+    line-height: 2.2em;
+    position: absolute;
+    left: -3.2em; /* Positie aanpassen */
+    top: 0;
+    margin-top: 0;
+    font-size: 0.9em;
+    box-shadow: 0 2px 5px rgba(52, 152, 219, 0.3);
+}
+
+.feature-list p {
+    flex-grow: 0;
+    margin-bottom: 1em;
+    line-height: 1.7em;
+    color: #666;
+    font-size: 1.05em;
+}
+
 /* Tarieven pagina specifieke aanpassingen - verwijder alle speciale stijlen */
 #info-studio .feature-list section,
 #info-aanHuis .feature-list section {
