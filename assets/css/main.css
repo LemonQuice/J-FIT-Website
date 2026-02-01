@@ -3122,3 +3122,10 @@ input, select, textarea {
 html {
     scroll-behavior: smooth;
 }
+
+.feature-list-2 section {
+    border-top: solid 1px #EFFBFF;
+    padding-top: 3em;
+    padding-left: 5em;
+    position: relative;
+}
