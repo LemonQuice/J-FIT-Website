@@ -232,6 +232,8 @@
 								// Hide all pricing sections
 								document.getElementById('pricing-studio').style.display = 'none';
 								document.getElementById('pricing-aanHuis').style.display = 'none';
+								document.getElementById('info-studio').style.display = 'none';
+								document.getElementById('info-aanHuis').style.display = 'none';
 								
 								// Reset button styles
 								document.getElementById('tab-studio').style.background = 'transparent';
@@ -242,10 +244,12 @@
 								// Show selected section and highlight button
 								if (type === 'studio') {
 									document.getElementById('pricing-studio').style.display = 'block';
+									document.getElementById('info-studio').style.display = 'block';
 									document.getElementById('tab-studio').style.background = '#3498DB';
 									document.getElementById('tab-studio').style.color = 'white';
 								} else {
 									document.getElementById('pricing-aanHuis').style.display = 'block';
+									document.getElementById('info-aanHuis').style.display = 'block';
 									document.getElementById('tab-aanHuis').style.background = '#3498DB';
 									document.getElementById('tab-aanHuis').style.color = 'white';
 								}
@@ -255,75 +259,86 @@
 					</div>
 				</section>
 
-			<!-- Extra Info -->
-				<section id="main" class="wrapper style2">
+			<!-- Extra Info - Studio -->
+				<section id="info-studio" class="wrapper style2">
 					<div class="container">
 						<header class="style1">
-							<h2>Wat je krijgt bij elk pakket</h2>
+							<h2>Wat je krijgt bij Studio Training</h2>
 							<p>
-								Bij J-FIT Coaching staat kwaliteit voorop. Elk pakket is zorgvuldig samengesteld<br />
-								om jou optimaal te begeleiden naar jouw fitnessdoelen - in de studio of bij jou thuis.
+								Bij J-FIT Coaching staat kwaliteit voorop. Het studio pakket is zorgvuldig samengesteld<br />
+								om jou optimaal te begeleiden naar jouw fitnessdoelen met professionele begeleiding en apparatuur.
 							</p>
 						</header>
 						<div class="feature-list">
 							<div class="row">
-								<div class="col-6 col-12-medium">
+								<div class="col-4 col-12-medium">
 									<section>
-										<h3 class="icon solid fa-heartbeat">Studio: Inspanningstest & Hartslagzones</h3>
+										<h3 class="icon solid fa-heartbeat">Inspanningstest & Hartslagzones</h3>
 										<p>
-											Bij studio training start je met een uitgebreide inspanningstest. 
-											Hiermee bepaal ik jouw persoonlijke hartslagzones en fitnessniveau, 
-											zodat je altijd traint op het juiste intensiteitsniveau.
+											Start met een uitgebreide inspanningstest om jouw persoonlijke hartslagzones 
+											en fitnessniveau te bepalen. Train effectief en veilig op het juiste intensiteitsniveau.
 										</p>
 									</section>
 								</div>
-								<div class="col-6 col-12-medium">
-									<section>
-										<h3 class="icon solid fa-home">Aan Huis: Persoonlijke Intake</h3>
-										<p>
-											Bij training aan huis starten we met een intake bij jou thuis. 
-											Ik breng al het materiaal mee en stel een schema op dat perfect 
-											past bij jouw ruimte en mogelijkheden.
-										</p>
-									</section>
-								</div>
-								<div class="col-6 col-12-medium">
+								<div class="col-4 col-12-medium">
 									<section>
 										<h3 class="icon solid fa-dumbbell">Persoonlijk trainingsschema</h3>
 										<p>
-											Of je nu in de studio of thuis traint: geen standaard schema's. 
-											Volledig gepersonaliseerd, afgestemd op jouw doelen en niveau. 
-											Regelmatig geëvalueerd en bijgesteld waar nodig.
-										</p>
-									</section>
-								</section>
-								</div>
-								<div class="col-6 col-12-medium">
-									<section>
-										<h3 class="icon solid fa-user">100% Persoonlijke begeleiding</h3>
-										<p>
-											Bij elke training krijg je mijn volledige aandacht. Correcte uitvoering, 
-											veiligheid en motivatie staan centraal - waar je ook traint. 
-											Jouw succes is mijn passie!
+											Geen standaard schema's, maar volledig gepersonaliseerd trainingsplan 
+											afgestemd op jouw doelen, beschikbaarheid en fitnessniveau.
 										</p>
 									</section>
 								</div>
-								<div class="col-6 col-12-medium">
+								<div class="col-4 col-12-medium">
 									<section>
-										<h3 class="icon solid fa-chart-line">Opvolging & progressie</h3>
+										<h3 class="icon solid fa-user">Begeleide training</h3>
 										<p>
-											Ik volg jouw voortgang nauwkeurig op en pas het trainingsschema aan 
-											op basis van jouw resultaten. Zo blijf je constant progressie maken en 
-											bereik je gegarandeerd jouw doelen.
+											Persoonlijke begeleiding tijdens elke training. Correcte uitvoering, 
+											motivatie en een veilige trainingsomgeving staan centraal.
 										</p>
 									</section>
 								</div>
-								<div class="col-6 col-12-medium">
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Extra Info - Aan Huis -->
+				<section id="info-aanHuis" class="wrapper style2" style="display: none;">
+					<div class="container">
+						<header class="style1">
+							<h2>Wat je krijgt bij Training Aan Huis</h2>
+							<p>
+								Bij J-FIT Coaching staat kwaliteit voorop. Het aan huis pakket is zorgvuldig samengesteld<br />
+								om jou optimaal te begeleiden naar jouw fitnessdoelen in de comfort van je eigen huis.
+							</p>
+						</header>
+						<div class="feature-list">
+							<div class="row">
+								<div class="col-4 col-12-medium">
 									<section>
-										<h3 class="icon solid fa-medal">Dezelfde kwaliteit, overal</h3>
+										<h3 class="icon solid fa-home">Persoonlijke intake bij jou thuis</h3>
 										<p>
-											Ongeacht waar je traint, krijg je altijd dezelfde hoogwaardige begeleiding, 
-											expertise en aandacht. Alleen de locatie en focus verschillen.
+											Start met een intake bij jou thuis. Ik breng al het materiaal mee en 
+											stel een schema op dat perfect past bij jouw ruimte en mogelijkheden.
+										</p>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section>
+										<h3 class="icon solid fa-dumbbell">Persoonlijk trainingsschema</h3>
+										<p>
+											Geen standaard schema's, maar volledig gepersonaliseerd trainingsplan 
+											afgestemd op jouw doelen en niveau, geschikt voor thuis.
+										</p>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section>
+										<h3 class="icon solid fa-user">Begeleide training</h3>
+										<p>
+											Volledige aandacht en persoonlijke begeleiding tijdens elke training 
+											bij jou thuis. Jouw veiligheid en vooruitgang zijn mijn prioriteit.
 										</p>
 									</section>
 								</div>
