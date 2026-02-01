@@ -3240,3 +3240,21 @@ html {
 
 
 
+/* HEADER BACKGROUND POSITIONING */
+
+/* Alleen voor NIET-homepage (andere pagina's) */
+body:not(.homepage) #header {
+    background-position: center 30% !important; /* Verplaats afbeelding naar boven */
+}
+
+/* Homepage blijft zoals het is */
+.homepage #header {
+    background-position: center center !important;
+}
+
+/* Responsive aanpassingen */
+@media screen and (max-width: 736px) {
+    body:not(.homepage) #header {
+        background-position: center 25% !important;
+    }
+}
