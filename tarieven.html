@@ -56,155 +56,202 @@
 					</div>
 				</section>
 
-			<!-- Pricing Packages - Studio -->
+			<!-- Pricing Packages met Tabs -->
 				<section id="highlights" class="wrapper style3">
-					<div class="title">Training in de Studio</div>
 					<div class="container">
-						<div class="row aln-center">
-							
-							<!-- Studio Basis Pakket -->
-							<div class="col-4 col-12-medium">
-								<section class="highlight">
-									<h3>Basis Pakket</h3>
-									<p class="price">€70/week</p>
-									<p style="font-weight: bold; color: #ce1b28; margin-bottom: 1em;">STUDIO</p>
-									<ul class="package-features">
-										<li>Professionele inspanningstest</li>
-										<li>Persoonlijk trainingsschema</li>
-										<li>1x begeleide training per week</li>
-										<li>Training op hartslagzones</li>
-										<li>Maandelijkse evaluatie</li>
-										<li>WhatsApp ondersteuning</li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#google-form" class="button style1">Aansluiten</a></li>
-									</ul>
-								</section>
+						
+						<!-- Tab Buttons -->
+						<div style="text-align: center; margin-bottom: 3em;">
+							<div style="display: inline-block; background: #f5f5f5; border-radius: 50px; padding: 8px;">
+								<button onclick="showPricing('studio')" id="tab-studio" style="padding: 15px 40px; border: none; background: #ce1b28; color: white; border-radius: 50px; font-size: 1.1em; font-weight: bold; cursor: pointer; margin: 0 5px; transition: all 0.3s;">
+									Training in de Studio
+								</button>
+								<button onclick="showPricing('aanHuis')" id="tab-aanHuis" style="padding: 15px 40px; border: none; background: transparent; color: #666; border-radius: 50px; font-size: 1.1em; font-weight: bold; cursor: pointer; margin: 0 5px; transition: all 0.3s;">
+									Training Aan Huis
+								</button>
 							</div>
-							
-							<!-- Studio Standaard Pakket -->
-							<div class="col-4 col-12-medium">
-								<section class="highlight">
-									<h3>Standaard Pakket</h3>
-									<p class="price">€120/week</p>
-									<p style="font-weight: bold; color: #ce1b28; margin-bottom: 1em;">STUDIO</p>
-									<ul class="package-features">
-										<li>Professionele inspanningstest</li>
-										<li>Persoonlijk trainingsschema</li>
-										<li>2x begeleide training per week</li>
-										<li>Training op hartslagzones</li>
-										<li>Wekelijkse evaluatie</li>
-										<li>Voedingsadvies basis</li>
-										<li>WhatsApp ondersteuning</li>
-										<li>Gratis hertest na 3 maanden</li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#google-form" class="button style1">Aansluiten</a></li>
-									</ul>
-								</section>
-							</div>
-							
-							<!-- Studio Premium Pakket -->
-							<div class="col-4 col-12-medium">
-								<section class="highlight">
-									<h3>Premium Pakket</h3>
-									<p class="price">€165/week</p>
-									<p style="font-weight: bold; color: #ce1b28; margin-bottom: 1em;">STUDIO</p>
-									<ul class="package-features">
-										<li>Professionele inspanningstest</li>
-										<li>Persoonlijk trainingsschema</li>
-										<li>3x begeleide training per week</li>
-										<li>Training op hartslagzones</li>
-										<li>Dagelijkse evaluatie</li>
-										<li>Volledig voedingsplan</li>
-										<li>24/7 WhatsApp ondersteuning</li>
-										<li>Gratis hertest elke 6 weken</li>
-										<li>Exclusieve groepssessies</li>
-										<li>Online trainingsplatform</li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#google-form" class="button style1">Aansluiten</a></li>
-									</ul>
-								</section>
-							</div>
-							
 						</div>
-					</div>
-				</section>
 
-			<!-- Pricing Packages - Aan Huis -->
-				<section id="highlights" class="wrapper style3">
-					<div class="title">Training Aan Huis</div>
-					<div class="container">
-						<div class="row aln-center">
-							
-							<!-- Aan Huis Basis Pakket -->
-							<div class="col-4 col-12-medium">
-								<section class="highlight">
-									<h3>Basis Pakket</h3>
-									<p class="price">€70/week</p>
-									<p style="font-weight: bold; color: #ce1b28; margin-bottom: 1em;">AAN HUIS</p>
-									<ul class="package-features">
-										<li>Persoonlijke intake bij jou thuis</li>
-										<li>Persoonlijk trainingsschema</li>
-										<li>1x begeleide training per week</li>
-										<li>Klein trainingsmateriaal inbegrepen</li>
-										<li>Maandelijkse evaluatie</li>
-										<li>WhatsApp ondersteuning</li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#google-form" class="button style1">Aansluiten</a></li>
-									</ul>
-								</section>
+						<!-- Studio Pakketten -->
+						<div id="pricing-studio" class="pricing-content">
+							<div class="title">Training in de Studio</div>
+							<p style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 3em;">
+								Professionele begeleiding met inspanningstest, hartslagzones en volledige studio faciliteiten
+							</p>
+							<div class="row aln-center">
+								
+								<!-- Studio Basis -->
+								<div class="col-4 col-12-medium">
+									<section class="highlight" style="border: 2px solid #e0e0e0; border-radius: 12px; padding: 2em;">
+										<h3>Basis</h3>
+										<p class="price" style="font-size: 2.5em; color: #ce1b28; margin: 0.5em 0;">€70<span style="font-size: 0.5em; color: #666;">/week</span></p>
+										<ul class="package-features" style="text-align: left; margin: 2em 0;">
+											<li>✓ Professionele inspanningstest</li>
+											<li>✓ Persoonlijk trainingsschema</li>
+											<li>✓ <strong>1x</strong> begeleide training/week</li>
+											<li>✓ Training op hartslagzones</li>
+											<li>✓ Maandelijkse evaluatie</li>
+											<li>✓ WhatsApp ondersteuning</li>
+										</ul>
+										<ul class="actions">
+											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
+										</ul>
+									</section>
+								</div>
+								
+								<!-- Studio Standaard (Highlighted) -->
+								<div class="col-4 col-12-medium">
+									<section class="highlight" style="border: 3px solid #ce1b28; border-radius: 12px; padding: 2em; position: relative; transform: scale(1.05); box-shadow: 0 10px 30px rgba(206, 27, 40, 0.2);">
+										<div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #ce1b28; color: white; padding: 5px 20px; border-radius: 20px; font-weight: bold; font-size: 0.9em;">
+											POPULAIR
+										</div>
+										<h3>Standaard</h3>
+										<p class="price" style="font-size: 2.5em; color: #ce1b28; margin: 0.5em 0;">€120<span style="font-size: 0.5em; color: #666;">/week</span></p>
+										<ul class="package-features" style="text-align: left; margin: 2em 0;">
+											<li>✓ Professionele inspanningstest</li>
+											<li>✓ Persoonlijk trainingsschema</li>
+											<li>✓ <strong>2x</strong> begeleide training/week</li>
+											<li>✓ Training op hartslagzones</li>
+											<li>✓ Wekelijkse evaluatie</li>
+											<li>✓ Voedingsadvies basis</li>
+											<li>✓ WhatsApp ondersteuning</li>
+											<li>✓ Gratis hertest na 3 maanden</li>
+										</ul>
+										<ul class="actions">
+											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
+										</ul>
+									</section>
+								</div>
+								
+								<!-- Studio Premium -->
+								<div class="col-4 col-12-medium">
+									<section class="highlight" style="border: 2px solid #e0e0e0; border-radius: 12px; padding: 2em;">
+										<h3>Premium</h3>
+										<p class="price" style="font-size: 2.5em; color: #ce1b28; margin: 0.5em 0;">€165<span style="font-size: 0.5em; color: #666;">/week</span></p>
+										<ul class="package-features" style="text-align: left; margin: 2em 0;">
+											<li>✓ Professionele inspanningstest</li>
+											<li>✓ Persoonlijk trainingsschema</li>
+											<li>✓ <strong>3x</strong> begeleide training/week</li>
+											<li>✓ Training op hartslagzones</li>
+											<li>✓ Dagelijkse evaluatie</li>
+											<li>✓ Volledig voedingsplan</li>
+											<li>✓ 24/7 WhatsApp ondersteuning</li>
+											<li>✓ Gratis hertest elke 6 weken</li>
+											<li>✓ Exclusieve groepssessies</li>
+											<li>✓ Online trainingsplatform</li>
+										</ul>
+										<ul class="actions">
+											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
+										</ul>
+									</section>
+								</div>
+								
 							</div>
-							
-							<!-- Aan Huis Standaard Pakket -->
-							<div class="col-4 col-12-medium">
-								<section class="highlight">
-									<h3>Standaard Pakket</h3>
-									<p class="price">€120/week</p>
-									<p style="font-weight: bold; color: #ce1b28; margin-bottom: 1em;">AAN HUIS</p>
-									<ul class="package-features">
-										<li>Persoonlijke intake bij jou thuis</li>
-										<li>Persoonlijk trainingsschema</li>
-										<li>2x begeleide training per week</li>
-										<li>Klein trainingsmateriaal inbegrepen</li>
-										<li>Wekelijkse evaluatie</li>
-										<li>Voedingsadvies basis</li>
-										<li>WhatsApp ondersteuning</li>
-										<li>Progressie-opvolging</li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#google-form" class="button style1">Aansluiten</a></li>
-									</ul>
-								</section>
-							</div>
-							
-							<!-- Aan Huis Premium Pakket -->
-							<div class="col-4 col-12-medium">
-								<section class="highlight">
-									<h3>Premium Pakket</h3>
-									<p class="price">€165/week</p>
-									<p style="font-weight: bold; color: #ce1b28; margin-bottom: 1em;">AAN HUIS</p>
-									<ul class="package-features">
-										<li>Persoonlijke intake bij jou thuis</li>
-										<li>Persoonlijk trainingsschema</li>
-										<li>3x begeleide training per week</li>
-										<li>Klein trainingsmateriaal inbegrepen</li>
-										<li>Dagelijkse evaluatie</li>
-										<li>Volledig voedingsplan</li>
-										<li>24/7 WhatsApp ondersteuning</li>
-										<li>Maandelijkse progressie-analyse</li>
-										<li>Exclusieve oefenvideo's</li>
-										<li>Online trainingsplatform</li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#google-form" class="button style1">Aansluiten</a></li>
-									</ul>
-								</section>
-							</div>
-							
 						</div>
+
+						<!-- Aan Huis Pakketten -->
+						<div id="pricing-aanHuis" class="pricing-content" style="display: none;">
+							<div class="title">Training Aan Huis</div>
+							<p style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 3em;">
+								Persoonlijke begeleiding in jouw vertrouwde omgeving met klein trainingsmateriaal
+							</p>
+							<div class="row aln-center">
+								
+								<!-- Aan Huis Basis -->
+								<div class="col-4 col-12-medium">
+									<section class="highlight" style="border: 2px solid #e0e0e0; border-radius: 12px; padding: 2em;">
+										<h3>Basis</h3>
+										<p class="price" style="font-size: 2.5em; color: #ce1b28; margin: 0.5em 0;">€70<span style="font-size: 0.5em; color: #666;">/week</span></p>
+										<ul class="package-features" style="text-align: left; margin: 2em 0;">
+											<li>✓ Persoonlijke intake bij jou thuis</li>
+											<li>✓ Persoonlijk trainingsschema</li>
+											<li>✓ <strong>1x</strong> begeleide training/week</li>
+											<li>✓ Klein trainingsmateriaal</li>
+											<li>✓ Maandelijkse evaluatie</li>
+											<li>✓ WhatsApp ondersteuning</li>
+										</ul>
+										<ul class="actions">
+											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
+										</ul>
+									</section>
+								</div>
+								
+								<!-- Aan Huis Standaard (Highlighted) -->
+								<div class="col-4 col-12-medium">
+									<section class="highlight" style="border: 3px solid #ce1b28; border-radius: 12px; padding: 2em; position: relative; transform: scale(1.05); box-shadow: 0 10px 30px rgba(206, 27, 40, 0.2);">
+										<div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #ce1b28; color: white; padding: 5px 20px; border-radius: 20px; font-weight: bold; font-size: 0.9em;">
+											POPULAIR
+										</div>
+										<h3>Standaard</h3>
+										<p class="price" style="font-size: 2.5em; color: #ce1b28; margin: 0.5em 0;">€120<span style="font-size: 0.5em; color: #666;">/week</span></p>
+										<ul class="package-features" style="text-align: left; margin: 2em 0;">
+											<li>✓ Persoonlijke intake bij jou thuis</li>
+											<li>✓ Persoonlijk trainingsschema</li>
+											<li>✓ <strong>2x</strong> begeleide training/week</li>
+											<li>✓ Klein trainingsmateriaal</li>
+											<li>✓ Wekelijkse evaluatie</li>
+											<li>✓ Voedingsadvies basis</li>
+											<li>✓ WhatsApp ondersteuning</li>
+											<li>✓ Progressie-opvolging</li>
+										</ul>
+										<ul class="actions">
+											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
+										</ul>
+									</section>
+								</div>
+								
+								<!-- Aan Huis Premium -->
+								<div class="col-4 col-12-medium">
+									<section class="highlight" style="border: 2px solid #e0e0e0; border-radius: 12px; padding: 2em;">
+										<h3>Premium</h3>
+										<p class="price" style="font-size: 2.5em; color: #ce1b28; margin: 0.5em 0;">€165<span style="font-size: 0.5em; color: #666;">/week</span></p>
+										<ul class="package-features" style="text-align: left; margin: 2em 0;">
+											<li>✓ Persoonlijke intake bij jou thuis</li>
+											<li>✓ Persoonlijk trainingsschema</li>
+											<li>✓ <strong>3x</strong> begeleide training/week</li>
+											<li>✓ Klein trainingsmateriaal</li>
+											<li>✓ Dagelijkse evaluatie</li>
+											<li>✓ Volledig voedingsplan</li>
+											<li>✓ 24/7 WhatsApp ondersteuning</li>
+											<li>✓ Maandelijkse progressie-analyse</li>
+											<li>✓ Exclusieve oefenvideo's</li>
+											<li>✓ Online trainingsplatform</li>
+										</ul>
+										<ul class="actions">
+											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
+										</ul>
+									</section>
+								</div>
+								
+							</div>
+						</div>
+
+						<!-- JavaScript voor tabs -->
+						<script>
+							function showPricing(type) {
+								// Hide all pricing sections
+								document.getElementById('pricing-studio').style.display = 'none';
+								document.getElementById('pricing-aanHuis').style.display = 'none';
+								
+								// Reset button styles
+								document.getElementById('tab-studio').style.background = 'transparent';
+								document.getElementById('tab-studio').style.color = '#666';
+								document.getElementById('tab-aanHuis').style.background = 'transparent';
+								document.getElementById('tab-aanHuis').style.color = '#666';
+								
+								// Show selected section and highlight button
+								if (type === 'studio') {
+									document.getElementById('pricing-studio').style.display = 'block';
+									document.getElementById('tab-studio').style.background = '#ce1b28';
+									document.getElementById('tab-studio').style.color = 'white';
+								} else {
+									document.getElementById('pricing-aanHuis').style.display = 'block';
+									document.getElementById('tab-aanHuis').style.background = '#ce1b28';
+									document.getElementById('tab-aanHuis').style.color = 'white';
+								}
+							}
+						</script>
+
 					</div>
 				</section>
 
