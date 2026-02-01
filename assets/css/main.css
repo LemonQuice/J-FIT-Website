@@ -2002,13 +2002,13 @@ input, select, textarea {
 			}
 
 		.wrapper.style1 {
-			background: #D8435C url("images/overlay.png");
+			background: #68B1E1 url("images/overlay.png");
 			color: #eee;
 			color: rgba(255, 255, 255, 0.75);
 		}
 
 			.wrapper.style1 .title {
-				background: #3498db url("images/overlay.png");
+				background: #A344D6 url("images/overlay.png");
 				color: #fff;
 			}
 
