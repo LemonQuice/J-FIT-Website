@@ -12,6 +12,29 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!-- Font Awesome 6 (nieuwste versie) -->
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+		<style>
+			.price-toggle-btn {
+				padding: 12px 30px;
+				border: 2px solid #3498DB;
+				background: white;
+				color: #3498DB;
+				border-radius: 30px;
+				font-size: 1em;
+				font-weight: bold;
+				cursor: pointer;
+				transition: all 0.3s;
+				margin-bottom: 2em;
+			}
+			.price-toggle-btn:hover {
+				background: #3498DB;
+				color: white;
+			}
+			.price-per-session {
+				font-size: 0.9em;
+				color: #888;
+				margin-top: 0.3em;
+			}
+		</style>
 	</head>
 	<body class="no-sidebar is-preload">
 		<div id="page-wrapper">
@@ -76,16 +99,26 @@
 						<!-- Studio Pakketten -->
 						<div id="pricing-studio" class="pricing-content">
 							<div class="title">Training in de Studio</div>
-							<p style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 3em;">
+							<p style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 1em;">
 								Professionele begeleiding met inspanningstest, hartslagzones en volledige studio faciliteiten
 							</p>
-							<div class="row aln-center">
+							
+							<!-- Toggle Button voor Studio -->
+							<div style="text-align: center; margin-bottom: 2em;">
+								<button class="price-toggle-btn" onclick="togglePriceType('studio')">
+									Bekijk 10-beurtenkaarten
+								</button>
+							</div>
+
+							<!-- Wekelijkse Pakketten Studio -->
+							<div id="studio-weekly" class="row aln-center">
 								
-								<!-- Studio Basis -->
+								<!-- Studio Basic -->
 								<div class="col-4 col-12-medium">
 									<section class="highlight" style="border: 2px solid #e0e0e0; border-radius: 12px; padding: 2em; background-color: #E8F4F8;">
-										<h3>Basis</h3>
+										<h3>Basic</h3>
 										<p class="price" style="font-size: 2.5em; color: #3498DB; margin: 0.5em 0;">€75<span style="font-size: 0.5em; color: #666;">/week</span></p>
+										<p class="price-per-session">€75 per sessie</p>
 										<ul class="package-features" style="text-align: left; margin: 2em 0;">
 											<li>✓ Professionele inspanningstest</li>
 											<li>✓ Persoonlijk trainingsschema</li>
@@ -100,14 +133,15 @@
 									</section>
 								</div>
 								
-								<!-- Studio Standaard (Highlighted) -->
+								<!-- Studio Pro (Highlighted) -->
 								<div class="col-4 col-12-medium">
 									<section class="highlight" style="border: 3px solid #3498DB; border-radius: 12px; padding: 2em; background-color: #E8F4F8; position: relative; transform: scale(1.05); box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);">
 										<div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #3498DB; color: white; padding: 5px 20px; border-radius: 20px; font-weight: bold; font-size: 0.9em;">
 											POPULAIR
 										</div>
-										<h3>Standaard</h3>
+										<h3>Pro</h3>
 										<p class="price" style="font-size: 2.5em; color: #3498DB; margin: 0.5em 0;">€120<span style="font-size: 0.5em; color: #666;">/week</span></p>
+										<p class="price-per-session">€60 per sessie</p>
 										<ul class="package-features" style="text-align: left; margin: 2em 0;">
 											<li>✓ Professionele inspanningstest</li>
 											<li>✓ Persoonlijk trainingsschema</li>
@@ -129,6 +163,7 @@
 									<section class="highlight" style="border: 2px solid #e0e0e0; border-radius: 12px; padding: 2em; background-color: #E8F4F8;">
 										<h3>Premium</h3>
 										<p class="price" style="font-size: 2.5em; color: #3498DB; margin: 0.5em 0;">€199<span style="font-size: 0.5em; color: #666;">/week</span></p>
+										<p class="price-per-session">€66 per sessie</p>
 										<ul class="package-features" style="text-align: left; margin: 2em 0;">
 											<li>✓ Professionele inspanningstest</li>
 											<li>✓ Persoonlijk trainingsschema</li>
@@ -148,21 +183,103 @@
 								</div>
 								
 							</div>
+
+							<!-- 10-Beurtenkaarten Studio -->
+							<div id="studio-10sessions" class="row aln-center" style="display: none;">
+								
+								<!-- Studio 1 op 1 -->
+								<div class="col-4 col-12-medium">
+									<section class="highlight" style="border: 2px solid #e0e0e0; border-radius: 12px; padding: 2em; background-color: #E8F4F8;">
+										<h3>1 op 1</h3>
+										<p class="price" style="font-size: 2.5em; color: #3498DB; margin: 0.5em 0;">€700<span style="font-size: 0.5em; color: #666;">/10 beurten</span></p>
+										<p class="price-per-session">€70 per sessie</p>
+										<ul class="package-features" style="text-align: left; margin: 2em 0;">
+											<li>✓ Professionele inspanningstest</li>
+											<li>✓ Persoonlijk trainingsschema</li>
+											<li>✓ <strong>10 sessies</strong> begeleide training</li>
+											<li>✓ Training op hartslagzones</li>
+											<li>✓ Persoonlijke begeleiding</li>
+											<li>✓ WhatsApp ondersteuning</li>
+										</ul>
+										<ul class="actions">
+											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
+										</ul>
+									</section>
+								</div>
+								
+								<!-- Studio 1 op 2 (Highlighted) -->
+								<div class="col-4 col-12-medium">
+									<section class="highlight" style="border: 3px solid #3498DB; border-radius: 12px; padding: 2em; background-color: #E8F4F8; position: relative; transform: scale(1.05); box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);">
+										<div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #3498DB; color: white; padding: 5px 20px; border-radius: 20px; font-weight: bold; font-size: 0.9em;">
+											POPULAIR
+										</div>
+										<h3>1 op 2</h3>
+										<p class="price" style="font-size: 2.5em; color: #3498DB; margin: 0.5em 0;">€800<span style="font-size: 0.5em; color: #666;">/10 beurten</span></p>
+										<p class="price-per-session">€80 per sessie</p>
+										<ul class="package-features" style="text-align: left; margin: 2em 0;">
+											<li>✓ Professionele inspanningstest</li>
+											<li>✓ Persoonlijk trainingsschema</li>
+											<li>✓ <strong>10 sessies</strong> begeleide training</li>
+											<li>✓ Training op hartslagzones</li>
+											<li>✓ Training met een partner</li>
+											<li>✓ Gedeelde motivatie</li>
+											<li>✓ WhatsApp ondersteuning</li>
+											<li>✓ Kostenefficiënt</li>
+										</ul>
+										<ul class="actions">
+											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
+										</ul>
+									</section>
+								</div>
+								
+								<!-- Studio 1 op max 6 -->
+								<div class="col-4 col-12-medium">
+									<section class="highlight" style="border: 2px solid #e0e0e0; border-radius: 12px; padding: 2em; background-color: #E8F4F8;">
+										<h3>1 op max 6</h3>
+										<p class="price" style="font-size: 2.5em; color: #3498DB; margin: 0.5em 0;">€900<span style="font-size: 0.5em; color: #666;">/10 beurten</span></p>
+										<p class="price-per-session">€90 per sessie</p>
+										<ul class="package-features" style="text-align: left; margin: 2em 0;">
+											<li>✓ Professionele inspanningstest</li>
+											<li>✓ Persoonlijk trainingsschema</li>
+											<li>✓ <strong>10 sessies</strong> begeleide training</li>
+											<li>✓ Training op hartslagzones</li>
+											<li>✓ Kleine groep (max 6 personen)</li>
+											<li>✓ Groepsdynamiek</li>
+											<li>✓ WhatsApp ondersteuning</li>
+											<li>✓ Beste prijs-kwaliteit</li>
+										</ul>
+										<ul class="actions">
+											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
+										</ul>
+									</section>
+								</div>
+								
+							</div>
 						</div>
 
 						<!-- Aan Huis Pakketten -->
 						<div id="pricing-aanHuis" class="pricing-content" style="display: none;">
 							<div class="title">Training Aan Huis</div>
-							<p style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 3em;">
+							<p style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 1em;">
 								Persoonlijke begeleiding in jouw vertrouwde omgeving
 							</p>
-							<div class="row aln-center">
+							
+							<!-- Toggle Button voor Aan Huis -->
+							<div style="text-align: center; margin-bottom: 2em;">
+								<button class="price-toggle-btn" onclick="togglePriceType('aanHuis')">
+									Bekijk 10-beurtenkaarten
+								</button>
+							</div>
+
+							<!-- Wekelijkse Pakketten Aan Huis -->
+							<div id="aanHuis-weekly" class="row aln-center">
 								
-								<!-- Aan Huis Basis -->
+								<!-- Aan Huis Basic -->
 								<div class="col-4 col-12-medium">
 									<section class="highlight" style="border: 2px solid #e0e0e0; border-radius: 12px; padding: 2em; background-color: #E8F4F8;">
-										<h3>Basis</h3>
+										<h3>Basic</h3>
 										<p class="price" style="font-size: 2.5em; color: #3498DB; margin: 0.5em 0;">€70<span style="font-size: 0.5em; color: #666;">/week</span></p>
+										<p class="price-per-session">€70 per sessie</p>
 										<ul class="package-features" style="text-align: left; margin: 2em 0;">
 											<li>✓ Persoonlijke intake bij jou thuis</li>
 											<li>✓ Persoonlijk trainingsschema</li>
@@ -177,14 +294,15 @@
 									</section>
 								</div>
 								
-								<!-- Aan Huis Standaard (Highlighted) -->
+								<!-- Aan Huis Pro (Highlighted) -->
 								<div class="col-4 col-12-medium">
 									<section class="highlight" style="border: 3px solid #3498DB; border-radius: 12px; padding: 2em; background-color: #E8F4F8; position: relative; transform: scale(1.05); box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);">
 										<div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #3498DB; color: white; padding: 5px 20px; border-radius: 20px; font-weight: bold; font-size: 0.9em;">
 											POPULAIR
 										</div>
-										<h3>Standaard</h3>
+										<h3>Pro</h3>
 										<p class="price" style="font-size: 2.5em; color: #3498DB; margin: 0.5em 0;">€120<span style="font-size: 0.5em; color: #666;">/week</span></p>
+										<p class="price-per-session">€60 per sessie</p>
 										<ul class="package-features" style="text-align: left; margin: 2em 0;">
 											<li>✓ Persoonlijke intake bij jou thuis</li>
 											<li>✓ Persoonlijk trainingsschema</li>
@@ -193,7 +311,7 @@
 											<li>✓ Wekelijkse evaluatie</li>
 											<li>✓ Voedingsadvies basis</li>
 											<li>✓ WhatsApp ondersteuning</li>
-											<li>✓ Progressie-opvolging</li>
+											<li>✓ Flexibele planning</li>
 										</ul>
 										<ul class="actions">
 											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
@@ -205,7 +323,8 @@
 								<div class="col-4 col-12-medium">
 									<section class="highlight" style="border: 2px solid #e0e0e0; border-radius: 12px; padding: 2em; background-color: #E8F4F8;">
 										<h3>Premium</h3>
-										<p class="price" style="font-size: 2.5em; color: #3498DB; margin: 0.5em 0;">€165<span style="font-size: 0.5em; color: #666;">/week</span></p>
+										<p class="price" style="font-size: 2.5em; color: #3498DB; margin: 0.5em 0;">€190<span style="font-size: 0.5em; color: #666;">/week</span></p>
+										<p class="price-per-session">€63 per sessie</p>
 										<ul class="package-features" style="text-align: left; margin: 2em 0;">
 											<li>✓ Persoonlijke intake bij jou thuis</li>
 											<li>✓ Persoonlijk trainingsschema</li>
@@ -214,9 +333,58 @@
 											<li>✓ Dagelijkse evaluatie</li>
 											<li>✓ Volledig voedingsplan</li>
 											<li>✓ 24/7 WhatsApp ondersteuning</li>
-											<li>✓ Maandelijkse progressie-analyse</li>
-											<li>✓ Exclusieve oefenvideo's</li>
+											<li>✓ Exclusieve aandacht</li>
 											<li>✓ Online trainingsplatform</li>
+										</ul>
+										<ul class="actions">
+											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
+										</ul>
+									</section>
+								</div>
+								
+							</div>
+
+							<!-- 10-Beurtenkaarten Aan Huis -->
+							<div id="aanHuis-10sessions" class="row aln-center" style="display: none;">
+								
+								<!-- Aan Huis 1 op 1 -->
+								<div class="col-4 col-12-medium">
+									<section class="highlight" style="border: 2px solid #e0e0e0; border-radius: 12px; padding: 2em; background-color: #E8F4F8;">
+										<h3>1 op 1</h3>
+										<p class="price" style="font-size: 2.5em; color: #3498DB; margin: 0.5em 0;">€700<span style="font-size: 0.5em; color: #666;">/10 beurten</span></p>
+										<p class="price-per-session">€70 per sessie</p>
+										<ul class="package-features" style="text-align: left; margin: 2em 0;">
+											<li>✓ Persoonlijke intake bij jou thuis</li>
+											<li>✓ Persoonlijk trainingsschema</li>
+											<li>✓ <strong>10 sessies</strong> begeleide training</li>
+											<li>✓ Klein trainingsmateriaal</li>
+											<li>✓ Persoonlijke begeleiding</li>
+											<li>✓ WhatsApp ondersteuning</li>
+										</ul>
+										<ul class="actions">
+											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
+										</ul>
+									</section>
+								</div>
+								
+								<!-- Aan Huis 1 op 2 (Highlighted) -->
+								<div class="col-4 col-12-medium">
+									<section class="highlight" style="border: 3px solid #3498DB; border-radius: 12px; padding: 2em; background-color: #E8F4F8; position: relative; transform: scale(1.05); box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);">
+										<div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #3498DB; color: white; padding: 5px 20px; border-radius: 20px; font-weight: bold; font-size: 0.9em;">
+											POPULAIR
+										</div>
+										<h3>1 op 2</h3>
+										<p class="price" style="font-size: 2.5em; color: #3498DB; margin: 0.5em 0;">€800<span style="font-size: 0.5em; color: #666;">/10 beurten</span></p>
+										<p class="price-per-session">€80 per sessie</p>
+										<ul class="package-features" style="text-align: left; margin: 2em 0;">
+											<li>✓ Persoonlijke intake bij jou thuis</li>
+											<li>✓ Persoonlijk trainingsschema</li>
+											<li>✓ <strong>10 sessies</strong> begeleide training</li>
+											<li>✓ Klein trainingsmateriaal</li>
+											<li>✓ Training met een partner</li>
+											<li>✓ Gedeelde motivatie</li>
+											<li>✓ WhatsApp ondersteuning</li>
+											<li>✓ Kostenefficiënt</li>
 										</ul>
 										<ul class="actions">
 											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
@@ -227,36 +395,6 @@
 							</div>
 						</div>
 
-						<!-- JavaScript voor tabs -->
-						<script>
-							function showPricing(type) {
-								// Hide all pricing sections
-								document.getElementById('pricing-studio').style.display = 'none';
-								document.getElementById('pricing-aanHuis').style.display = 'none';
-								document.getElementById('info-studio').style.display = 'none';
-								document.getElementById('info-aanHuis').style.display = 'none';
-								
-								// Reset button styles
-								document.getElementById('tab-studio').style.background = 'transparent';
-								document.getElementById('tab-studio').style.color = '#666';
-								document.getElementById('tab-aanHuis').style.background = 'transparent';
-								document.getElementById('tab-aanHuis').style.color = '#666';
-								
-								// Show selected section and highlight button
-								if (type === 'studio') {
-									document.getElementById('pricing-studio').style.display = 'block';
-									document.getElementById('info-studio').style.display = 'block';
-									document.getElementById('tab-studio').style.background = '#3498DB';
-									document.getElementById('tab-studio').style.color = 'white';
-								} else {
-									document.getElementById('pricing-aanHuis').style.display = 'block';
-									document.getElementById('info-aanHuis').style.display = 'block';
-									document.getElementById('tab-aanHuis').style.background = '#3498DB';
-									document.getElementById('tab-aanHuis').style.color = 'white';
-								}
-							}
-						</script>
-
 					</div>
 				</section>
 
@@ -264,10 +402,10 @@
 				<section id="info-studio" class="wrapper style2">
 					<div class="container">
 						<header class="style1">
-							<h2>Wat je krijgt bij Studio Training</h2>
+							<h2>Wat je krijgt bij Training in de Studio</h2>
 							<p>
-								Bij J-FIT Coaching staat kwaliteit voorop. Het studio pakket is zorgvuldig samengesteld<br />
-								om jou optimaal te begeleiden naar jouw fitnessdoelen met professionele begeleiding en apparatuur.
+								Bij J-FIT Coaching staat kwaliteit voorop. Elk pakket is zorgvuldig samengesteld<br />
+								om jou optimaal te begeleiden naar jouw fitnessdoelen.
 							</p>
 						</header>
 						<div class="feature-list">
@@ -453,6 +591,57 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<script>
+				// Functie om tussen Studio en Aan Huis te wisselen
+				function showPricing(type) {
+					// Verberg beide pricing secties
+					document.getElementById('pricing-studio').style.display = 'none';
+					document.getElementById('pricing-aanHuis').style.display = 'none';
+					
+					// Verberg beide info secties
+					document.getElementById('info-studio').style.display = 'none';
+					document.getElementById('info-aanHuis').style.display = 'none';
+					
+					// Update tab buttons
+					document.getElementById('tab-studio').style.background = 'transparent';
+					document.getElementById('tab-studio').style.color = '#666';
+					document.getElementById('tab-aanHuis').style.background = 'transparent';
+					document.getElementById('tab-aanHuis').style.color = '#666';
+					
+					// Toon de geselecteerde sectie
+					if (type === 'studio') {
+						document.getElementById('pricing-studio').style.display = 'block';
+						document.getElementById('info-studio').style.display = 'block';
+						document.getElementById('tab-studio').style.background = '#3498DB';
+						document.getElementById('tab-studio').style.color = 'white';
+					} else {
+						document.getElementById('pricing-aanHuis').style.display = 'block';
+						document.getElementById('info-aanHuis').style.display = 'block';
+						document.getElementById('tab-aanHuis').style.background = '#3498DB';
+						document.getElementById('tab-aanHuis').style.color = 'white';
+					}
+				}
+
+				// Functie om tussen wekelijkse pakketten en 10-beurtenkaarten te wisselen
+				function togglePriceType(location) {
+					const weeklyDiv = document.getElementById(location + '-weekly');
+					const sessionsDiv = document.getElementById(location + '-10sessions');
+					const buttons = document.querySelectorAll('#pricing-' + location + ' .price-toggle-btn');
+					
+					if (weeklyDiv.style.display === 'none') {
+						// Toon wekelijkse pakketten
+						weeklyDiv.style.display = 'flex';
+						sessionsDiv.style.display = 'none';
+						buttons.forEach(btn => btn.textContent = 'Bekijk 10-beurtenkaarten');
+					} else {
+						// Toon 10-beurtenkaarten
+						weeklyDiv.style.display = 'none';
+						sessionsDiv.style.display = 'flex';
+						buttons.forEach(btn => btn.textContent = 'Bekijk wekelijkse pakketten');
+					}
+				}
+			</script>
 
 	</body>
 </html>
