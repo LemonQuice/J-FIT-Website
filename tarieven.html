@@ -103,7 +103,7 @@
 
 						<!-- Studio Pakketten -->
 						<div id="pricing-studio" class="pricing-content">
-							<div class="title">Training in de Studio</div>
+							<div class="title" id="studio-tarieven">Training in de Studio</div>
 							<p style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 1em;">
 								Professionele begeleiding met inspanningstest, hartslagzones en volledige studio faciliteiten
 							</p>
@@ -129,7 +129,6 @@
 											<li>✓ Persoonlijk trainingsschema</li>
 											<li>✓ <strong>1x</strong> begeleide training/week</li>
 											<li>✓ Training op hartslagzones</li>
-											<li>✓ Maandelijkse evaluatie</li>
 											<li>✓ WhatsApp ondersteuning</li>
 											<li>✓ Gratis hertest na 12 weken</li>
 										</ul>
@@ -154,8 +153,8 @@
 											<li>✓ <strong>2x</strong> begeleide training/week</li>
 											<li>✓ Training op hartslagzones</li>
 											<li>✓ Voedingsadvies basis</li>
+											<li>✓ 24/7 toegang tot studio om vrij te sporten</li>
 											<li>✓ WhatsApp ondersteuning</li>
-											<li>✓ Gratis hertest na 12 weken</li>
 										</ul>
 										<ul class="actions">
 											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
@@ -175,8 +174,8 @@
 											<li>✓ <strong>3x</strong> begeleide training/week</li>
 											<li>✓ Training op hartslagzones</li>
 											<li>✓ Volledig voedingsplan</li>
-											<li>✓ 24/7 WhatsApp ondersteuning</li>
-											<li>✓ Gratis hertest na 12 weken</li>
+											<li>✓ 24/7 toegang tot studio om vrij te sporten</li>
+											<li>✓ WhatsApp ondersteuning</li>
 										</ul>
 										<ul class="actions">
 											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
@@ -252,7 +251,7 @@
 
 						<!-- Aan Huis Pakketten -->
 						<div id="pricing-aanHuis" class="pricing-content" style="display: none;">
-							<div class="title">Training Aan Huis</div>
+							<div class="title" id="aanhuis-tarieven">Training Aan Huis</div>
 							<p style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 1em;">
 								Persoonlijke begeleiding in jouw vertrouwde omgeving
 							</p>
@@ -277,10 +276,8 @@
 											<li>✓ Persoonlijke intake bij jou thuis</li>
 											<li>✓ Persoonlijk trainingsschema</li>
 											<li>✓ <strong>1x</strong> begeleide training/week</li>
-											<li>✓ Klein trainingsmateriaal</li>
 											<li>✓ Maandelijkse evaluatie</li>
 											<li>✓ WhatsApp ondersteuning</li>
-											<li>✓ Gratis hertest na 12 weken</li>
 										</ul>
 										<ul class="actions">
 											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
@@ -301,11 +298,9 @@
 											<li>✓ Persoonlijke intake bij jou thuis</li>
 											<li>✓ Persoonlijk trainingsschema</li>
 											<li>✓ <strong>2x</strong> begeleide training/week</li>
-											<li>✓ Klein trainingsmateriaal</li>
 											<li>✓ Voedingsadvies basis</li>
 											<li>✓ WhatsApp ondersteuning</li>
 											<li>✓ Flexibele planning</li>
-											<li>✓ Gratis hertest na 12 weken</li>
 										</ul>
 										<ul class="actions">
 											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
@@ -323,11 +318,9 @@
 											<li>✓ Persoonlijke intake bij jou thuis</li>
 											<li>✓ Persoonlijk trainingsschema</li>
 											<li>✓ <strong>3x</strong> begeleide training/week</li>
-											<li>✓ Klein trainingsmateriaal</li>
 											<li>✓ Volledig voedingsplan</li>
 											<li>✓ 24/7 WhatsApp ondersteuning</li>
 											<li>✓ Exclusieve aandacht</li>
-											<li>✓ Gratis hertest na 12 weken</li>
 										</ul>
 										<ul class="actions">
 											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
@@ -349,7 +342,7 @@
 										<ul class="package-features" style="text-align: left; margin: 2em 0;">
 											<li>✓ Persoonlijke intake bij jou thuis</li>
 											<li>✓ <strong>10 sessies</strong> begeleide training</li>
-											<li>✓ Klein trainingsmateriaal</li>
+
 											<li>✓ Persoonlijke begeleiding</li>
 											<li>✓ WhatsApp ondersteuning</li>
 										</ul>
@@ -371,7 +364,6 @@
 										<ul class="package-features" style="text-align: left; margin: 2em 0;">
 											<li>✓ Persoonlijke intake bij jou thuis</li>
 											<li>✓ <strong>10 sessies</strong> begeleide training</li>
-											<li>✓ Klein trainingsmateriaal</li>
 											<li>✓ Training met een partner</li>
 											<li>✓ Gedeelde motivatie</li>
 											<li>✓ WhatsApp ondersteuning</li>
@@ -632,6 +624,51 @@
 						buttons.forEach(btn => btn.textContent = 'Bekijk wekelijkse pakketten');
 					}
 				}
+
+				// Handle anchor links voor directe navigatie naar studio of aan huis tarieven
+				window.addEventListener('DOMContentLoaded', function() {
+					const hash = window.location.hash;
+					
+					if (hash === '#studio-tarieven') {
+						// Open studio tab
+						showPricing('studio');
+						// Zorg ervoor dat wekelijkse tarieven getoond worden (niet 10-beurtenkaarten)
+						const weeklyDiv = document.getElementById('studio-weekly');
+						const sessionsDiv = document.getElementById('studio-10sessions');
+						if (weeklyDiv.style.display === 'none') {
+							weeklyDiv.style.display = 'flex';
+							sessionsDiv.style.display = 'none';
+							const buttons = document.querySelectorAll('#pricing-studio .price-toggle-btn');
+							buttons.forEach(btn => btn.textContent = 'Bekijk 10-beurtenkaarten');
+						}
+						// Smooth scroll naar de sectie
+						setTimeout(function() {
+							document.getElementById('studio-tarieven').scrollIntoView({ 
+								behavior: 'smooth',
+								block: 'start'
+							});
+						}, 100);
+					} else if (hash === '#aanhuis-tarieven') {
+						// Open aan huis tab
+						showPricing('aanHuis');
+						// Zorg ervoor dat wekelijkse tarieven getoond worden (niet 10-beurtenkaarten)
+						const weeklyDiv = document.getElementById('aanHuis-weekly');
+						const sessionsDiv = document.getElementById('aanHuis-10sessions');
+						if (weeklyDiv.style.display === 'none') {
+							weeklyDiv.style.display = 'flex';
+							sessionsDiv.style.display = 'none';
+							const buttons = document.querySelectorAll('#pricing-aanHuis .price-toggle-btn');
+							buttons.forEach(btn => btn.textContent = 'Bekijk 10-beurtenkaarten');
+						}
+						// Smooth scroll naar de sectie
+						setTimeout(function() {
+							document.getElementById('aanhuis-tarieven').scrollIntoView({ 
+								behavior: 'smooth',
+								block: 'start'
+							});
+						}, 100);
+					}
+				});
 			</script>
 
 	</body>
