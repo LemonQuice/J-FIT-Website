@@ -40,20 +40,45 @@
 				margin-top: 0.3em;
 			}
 			
-			/* Mobile: plaats toggle button onder de kaarten */
+			/* Plaats toggle button onder de kaarten op alle schermen */
+			.pricing-wrapper {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+			.toggle-container {
+				order: 10;
+				width: 100%;
+				text-align: center;
+				margin-top: 2em;
+				margin-bottom: 1em;
+			}
+			#studio-weekly,
+			#studio-10sessions,
+			#aanHuis-weekly,
+			#aanHuis-10sessions {
+				order: 1;
+				width: 100%;
+			}
+			
+			/* Google Form iframe styling voor mobiel */
 			@media screen and (max-width: 980px) {
-				.toggle-container {
-					order: 10;
-					width: 100%;
-					margin-top: 2em !important;
-					margin-bottom: 1em !important;
+				.form-container {
+					min-height: auto !important;
+					height: auto !important;
+					overflow: hidden;
 				}
-				#studio-weekly,
-				#studio-10sessions,
-				#aanHuis-weekly,
-				#aanHuis-10sessions {
-					display: flex;
-					flex-direction: column;
+				.form-container iframe {
+					min-height: 1400px;
+					height: auto;
+				}
+				#footer-form-container {
+					min-height: 850px !important;
+					height: auto !important;
+					transition: min-height 0.3s ease;
+				}
+				#footer-form-container iframe {
+					min-height: 800px;
 				}
 			}
 		</style>
@@ -128,16 +153,16 @@
 								Koop een 10-beurtenkaart voor flexibele training in de <strong>Studio</strong>. Plan je sessies wanneer het jou uitkomt en profiteer van persoonlijke begeleiding zonder vast wekelijks schema.
 							</p>
 							
-							<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+							<div class="pricing-wrapper">
 								<!-- Toggle Button voor Studio -->
-								<div class="toggle-container" style="text-align: center; margin-bottom: 2em;">
+								<div class="toggle-container">
 									<button class="price-toggle-btn" onclick="togglePriceType('studio')">
 										Bekijk 10-beurtenkaarten
 									</button>
 								</div>
 
 							<!-- Wekelijkse Pakketten Studio -->
-							<div id="studio-weekly" class="row aln-center" style="width: 100%;">
+							<div id="studio-weekly" class="row aln-center">
 								
 								<!-- Studio Basic -->
 								<div class="col-4 col-12-medium">
@@ -277,12 +302,13 @@
 								Koop een 10-beurtenkaart voor flexibele training <strong>Aan Huis</strong>. Plan je sessies wanneer het jou uitkomt en geniet van persoonlijke begeleiding in je eigen omgeving zonder vast wekelijks schema.
 							</p>
 							
-							<!-- Toggle Button voor Aan Huis -->
-							<div class="toggle-container" style="text-align: center; margin-bottom: 2em;">
-								<button class="price-toggle-btn" onclick="togglePriceType('aanHuis')">
-									Bekijk 10-beurtenkaarten
-								</button>
-							</div>
+							<div class="pricing-wrapper">
+								<!-- Toggle Button voor Aan Huis -->
+								<div class="toggle-container">
+									<button class="price-toggle-btn" onclick="togglePriceType('aanHuis')">
+										Bekijk 10-beurtenkaarten
+									</button>
+								</div>
 
 							<!-- Wekelijkse Pakketten Aan Huis -->
 							<div id="aanHuis-weekly" class="row aln-center">
@@ -493,7 +519,7 @@
       <h2>Schrijf je in voor een kennismaking</h2>
       <p>Vul het formulier hieronder in en ik neem snel contact met je op.</p>
     </header>
-	<div style="max-width: 800px; margin: 0 auto;">
+	<div class="form-container" style="max-width: 800px; margin: 0 auto;">
 		<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfH3ULBhYoF6ktbaTzUN0AA4_77bRLahz-pcQ3a61Y43TkDnQ/viewform?embedded=true" width="100%" height="1800" frameborder="0" marginheight="0" marginwidth="0">Laden…</iframe>
 	</div>
   </div>
@@ -520,10 +546,10 @@
 							<div class="col-6 col-12-medium">
 
 <!-- Google Form Embed -->
-<div style="border: 3px solid #282b34; border-radius: 8px; padding: 10px; background-color: #282b34; position: relative;">
+<div id="footer-form-container" class="form-container" style="border: 3px solid #282b34; border-radius: 8px; padding: 10px; background-color: #282b34; position: relative; min-height: 800px;">
 	<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfsoxmNbSSgSzlNPjgULJ0KvNm49BisNiJ_RP4KGY4vq7INbA/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Laden…</iframe>
 	<!-- Overlay om Google branding te verbergen -->
-	<div style="position: absolute; bottom: 10px; left: 10px; right: 10px; height: 90px; background-color: #282b34; border-radius: 0 0 5px 5px;"></div>
+	<div id="footer-form-overlay" style="position: absolute; bottom: 10px; left: 10px; right: 10px; height: 90px; background-color: #282b34; border-radius: 0 0 5px 5px;"></div>
 </div>
 
 
@@ -691,6 +717,48 @@
 						}, 100);
 					}
 				});
+
+				// Functie om iframe hoogte dynamisch aan te passen voor mobiel
+				function adjustIframeHeight() {
+					if (window.innerWidth <= 980) {
+						const iframes = document.querySelectorAll('.form-container iframe');
+						iframes.forEach(function(iframe) {
+							// Probeer de hoogte van de iframe content te detecteren
+							try {
+								iframe.style.height = 'auto';
+								iframe.style.minHeight = '1400px';
+							} catch(e) {
+								console.log('Cannot access iframe content');
+							}
+						});
+
+						// Pas de footer form container aan
+						const footerContainer = document.getElementById('footer-form-container');
+						if (footerContainer) {
+							const footerIframe = footerContainer.querySelector('iframe');
+							if (footerIframe) {
+								// Luister naar berichten van de iframe over hoogte veranderingen
+								window.addEventListener('message', function(e) {
+									if (e.origin === 'https://docs.google.com') {
+										try {
+											const data = JSON.parse(e.data);
+											if (data && data.height) {
+												footerContainer.style.minHeight = data.height + 'px';
+												footerIframe.style.height = data.height + 'px';
+											}
+										} catch(err) {
+											// Ignore parsing errors
+										}
+									}
+								});
+							}
+						}
+					}
+				}
+
+				// Voer uit bij laden en bij resize
+				window.addEventListener('load', adjustIframeHeight);
+				window.addEventListener('resize', adjustIframeHeight);
 			</script>
 
 	</body>
