@@ -14,20 +14,25 @@
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 		<style>
 			.price-toggle-btn {
-				padding: 12px 30px;
-				border: 2px solid #3498DB;
-				background: white;
-				color: #3498DB;
-				border-radius: 30px;
-				font-size: 1em;
+				padding: 10px 25px;
+				border: none;
+				background: #555;
+				color: white;
+				border-radius: 25px;
+				font-size: 0.9em;
 				font-weight: bold;
 				cursor: pointer;
 				transition: all 0.3s;
 				margin-bottom: 2em;
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				line-height: 1;
 			}
 			.price-toggle-btn:hover {
 				background: #3498DB;
-				color: white;
+				transform: translateY(-2px);
+				box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
 			}
 			.price-per-session {
 				font-size: 0.9em;
@@ -126,6 +131,7 @@
 											<li>✓ Training op hartslagzones</li>
 											<li>✓ Maandelijkse evaluatie</li>
 											<li>✓ WhatsApp ondersteuning</li>
+											<li>✓ Gratis hertest na 12 weken</li>
 										</ul>
 										<ul class="actions">
 											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
@@ -147,10 +153,9 @@
 											<li>✓ Persoonlijk trainingsschema</li>
 											<li>✓ <strong>2x</strong> begeleide training/week</li>
 											<li>✓ Training op hartslagzones</li>
-											<li>✓ Wekelijkse evaluatie</li>
 											<li>✓ Voedingsadvies basis</li>
 											<li>✓ WhatsApp ondersteuning</li>
-											<li>✓ Gratis hertest na 3 maanden</li>
+											<li>✓ Gratis hertest na 12 weken</li>
 										</ul>
 										<ul class="actions">
 											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
@@ -169,12 +174,9 @@
 											<li>✓ Persoonlijk trainingsschema</li>
 											<li>✓ <strong>3x</strong> begeleide training/week</li>
 											<li>✓ Training op hartslagzones</li>
-											<li>✓ Dagelijkse evaluatie</li>
 											<li>✓ Volledig voedingsplan</li>
 											<li>✓ 24/7 WhatsApp ondersteuning</li>
-											<li>✓ Gratis hertest elke 6 weken</li>
-											<li>✓ Exclusieve groepssessies</li>
-											<li>✓ Online trainingsplatform</li>
+											<li>✓ Gratis hertest na 12 weken</li>
 										</ul>
 										<ul class="actions">
 											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
@@ -187,17 +189,14 @@
 							<!-- 10-Beurtenkaarten Studio -->
 							<div id="studio-10sessions" class="row aln-center" style="display: none;">
 								
-								<!-- Studio 1 op 1 -->
+								<!-- Studio PT -->
 								<div class="col-4 col-12-medium">
 									<section class="highlight" style="border: 2px solid #e0e0e0; border-radius: 12px; padding: 2em; background-color: #E8F4F8;">
-										<h3>1 op 1</h3>
+										<h3>PT</h3>
 										<p class="price" style="font-size: 2.5em; color: #3498DB; margin: 0.5em 0;">€700<span style="font-size: 0.5em; color: #666;">/10 beurten</span></p>
 										<p class="price-per-session">€70 per sessie</p>
 										<ul class="package-features" style="text-align: left; margin: 2em 0;">
-											<li>✓ Professionele inspanningstest</li>
-											<li>✓ Persoonlijk trainingsschema</li>
 											<li>✓ <strong>10 sessies</strong> begeleide training</li>
-											<li>✓ Training op hartslagzones</li>
 											<li>✓ Persoonlijke begeleiding</li>
 											<li>✓ WhatsApp ondersteuning</li>
 										</ul>
@@ -207,20 +206,17 @@
 									</section>
 								</div>
 								
-								<!-- Studio 1 op 2 (Highlighted) -->
+								<!-- Studio DUO (Highlighted) -->
 								<div class="col-4 col-12-medium">
 									<section class="highlight" style="border: 3px solid #3498DB; border-radius: 12px; padding: 2em; background-color: #E8F4F8; position: relative; transform: scale(1.05); box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);">
 										<div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #3498DB; color: white; padding: 5px 20px; border-radius: 20px; font-weight: bold; font-size: 0.9em;">
 											POPULAIR
 										</div>
-										<h3>1 op 2</h3>
+										<h3>DUO</h3>
 										<p class="price" style="font-size: 2.5em; color: #3498DB; margin: 0.5em 0;">€800<span style="font-size: 0.5em; color: #666;">/10 beurten</span></p>
 										<p class="price-per-session">€80 per sessie</p>
 										<ul class="package-features" style="text-align: left; margin: 2em 0;">
-											<li>✓ Professionele inspanningstest</li>
-											<li>✓ Persoonlijk trainingsschema</li>
 											<li>✓ <strong>10 sessies</strong> begeleide training</li>
-											<li>✓ Training op hartslagzones</li>
 											<li>✓ Training met een partner</li>
 											<li>✓ Gedeelde motivatie</li>
 											<li>✓ WhatsApp ondersteuning</li>
@@ -232,17 +228,14 @@
 									</section>
 								</div>
 								
-								<!-- Studio 1 op max 6 -->
+								<!-- Studio SMALL GROUP -->
 								<div class="col-4 col-12-medium">
 									<section class="highlight" style="border: 2px solid #e0e0e0; border-radius: 12px; padding: 2em; background-color: #E8F4F8;">
-										<h3>1 op max 6</h3>
+										<h3>SMALL GROUP</h3>
 										<p class="price" style="font-size: 2.5em; color: #3498DB; margin: 0.5em 0;">€900<span style="font-size: 0.5em; color: #666;">/10 beurten</span></p>
 										<p class="price-per-session">€90 per sessie</p>
 										<ul class="package-features" style="text-align: left; margin: 2em 0;">
-											<li>✓ Professionele inspanningstest</li>
-											<li>✓ Persoonlijk trainingsschema</li>
 											<li>✓ <strong>10 sessies</strong> begeleide training</li>
-											<li>✓ Training op hartslagzones</li>
 											<li>✓ Kleine groep (max 6 personen)</li>
 											<li>✓ Groepsdynamiek</li>
 											<li>✓ WhatsApp ondersteuning</li>
@@ -287,6 +280,7 @@
 											<li>✓ Klein trainingsmateriaal</li>
 											<li>✓ Maandelijkse evaluatie</li>
 											<li>✓ WhatsApp ondersteuning</li>
+											<li>✓ Gratis hertest na 12 weken</li>
 										</ul>
 										<ul class="actions">
 											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
@@ -308,10 +302,10 @@
 											<li>✓ Persoonlijk trainingsschema</li>
 											<li>✓ <strong>2x</strong> begeleide training/week</li>
 											<li>✓ Klein trainingsmateriaal</li>
-											<li>✓ Wekelijkse evaluatie</li>
 											<li>✓ Voedingsadvies basis</li>
 											<li>✓ WhatsApp ondersteuning</li>
 											<li>✓ Flexibele planning</li>
+											<li>✓ Gratis hertest na 12 weken</li>
 										</ul>
 										<ul class="actions">
 											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
@@ -330,11 +324,10 @@
 											<li>✓ Persoonlijk trainingsschema</li>
 											<li>✓ <strong>3x</strong> begeleide training/week</li>
 											<li>✓ Klein trainingsmateriaal</li>
-											<li>✓ Dagelijkse evaluatie</li>
 											<li>✓ Volledig voedingsplan</li>
 											<li>✓ 24/7 WhatsApp ondersteuning</li>
 											<li>✓ Exclusieve aandacht</li>
-											<li>✓ Online trainingsplatform</li>
+											<li>✓ Gratis hertest na 12 weken</li>
 										</ul>
 										<ul class="actions">
 											<li><a href="#google-form" class="button style1" style="width: 100%;">Aansluiten</a></li>
@@ -347,15 +340,14 @@
 							<!-- 10-Beurtenkaarten Aan Huis -->
 							<div id="aanHuis-10sessions" class="row aln-center" style="display: none;">
 								
-								<!-- Aan Huis 1 op 1 -->
+								<!-- Aan Huis PT -->
 								<div class="col-4 col-12-medium">
 									<section class="highlight" style="border: 2px solid #e0e0e0; border-radius: 12px; padding: 2em; background-color: #E8F4F8;">
-										<h3>1 op 1</h3>
+										<h3>PT</h3>
 										<p class="price" style="font-size: 2.5em; color: #3498DB; margin: 0.5em 0;">€700<span style="font-size: 0.5em; color: #666;">/10 beurten</span></p>
 										<p class="price-per-session">€70 per sessie</p>
 										<ul class="package-features" style="text-align: left; margin: 2em 0;">
 											<li>✓ Persoonlijke intake bij jou thuis</li>
-											<li>✓ Persoonlijk trainingsschema</li>
 											<li>✓ <strong>10 sessies</strong> begeleide training</li>
 											<li>✓ Klein trainingsmateriaal</li>
 											<li>✓ Persoonlijke begeleiding</li>
@@ -367,18 +359,17 @@
 									</section>
 								</div>
 								
-								<!-- Aan Huis 1 op 2 (Highlighted) -->
+								<!-- Aan Huis DUO (Highlighted) -->
 								<div class="col-4 col-12-medium">
 									<section class="highlight" style="border: 3px solid #3498DB; border-radius: 12px; padding: 2em; background-color: #E8F4F8; position: relative; transform: scale(1.05); box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);">
 										<div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #3498DB; color: white; padding: 5px 20px; border-radius: 20px; font-weight: bold; font-size: 0.9em;">
 											POPULAIR
 										</div>
-										<h3>1 op 2</h3>
+										<h3>DUO</h3>
 										<p class="price" style="font-size: 2.5em; color: #3498DB; margin: 0.5em 0;">€800<span style="font-size: 0.5em; color: #666;">/10 beurten</span></p>
 										<p class="price-per-session">€80 per sessie</p>
 										<ul class="package-features" style="text-align: left; margin: 2em 0;">
 											<li>✓ Persoonlijke intake bij jou thuis</li>
-											<li>✓ Persoonlijk trainingsschema</li>
 											<li>✓ <strong>10 sessies</strong> begeleide training</li>
 											<li>✓ Klein trainingsmateriaal</li>
 											<li>✓ Training met een partner</li>
@@ -645,4 +636,3 @@
 
 	</body>
 </html>
-
