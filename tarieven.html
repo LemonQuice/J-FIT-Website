@@ -39,6 +39,23 @@
 				color: #888;
 				margin-top: 0.3em;
 			}
+			
+			/* Mobile: plaats toggle button onder de kaarten */
+			@media screen and (max-width: 980px) {
+				.toggle-container {
+					order: 10;
+					width: 100%;
+					margin-top: 2em !important;
+					margin-bottom: 1em !important;
+				}
+				#studio-weekly,
+				#studio-10sessions,
+				#aanHuis-weekly,
+				#aanHuis-10sessions {
+					display: flex;
+					flex-direction: column;
+				}
+			}
 		</style>
 	</head>
 	<body class="no-sidebar is-preload">
@@ -104,19 +121,23 @@
 						<!-- Studio Pakketten -->
 						<div id="pricing-studio" class="pricing-content">
 							<div class="title" id="studio-tarieven">Training in de Studio</div>
-							<p style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 1em;">
-								Professionele begeleiding met inspanningstest, hartslagzones en volledige studio faciliteiten
+							<p id="studio-description-weekly" style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 1em; max-width: 800px; margin-left: auto; margin-right: auto;">
+								Train in de <strong>Studio</strong> met wekelijkse begeleiding. Je betaalt per week en krijgt vaste momenten waarop je traint met persoonlijke coaching, afgestemd op jouw niveau en doelen.
+							</p>
+							<p id="studio-description-sessions" style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 1em; max-width: 800px; margin-left: auto; margin-right: auto; display: none;">
+								Koop een 10-beurtenkaart voor flexibele training in de <strong>Studio</strong>. Plan je sessies wanneer het jou uitkomt en profiteer van persoonlijke begeleiding zonder vast wekelijks schema.
 							</p>
 							
-							<!-- Toggle Button voor Studio -->
-							<div style="text-align: center; margin-bottom: 2em;">
-								<button class="price-toggle-btn" onclick="togglePriceType('studio')">
-									Bekijk 10-beurtenkaarten
-								</button>
-							</div>
+							<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+								<!-- Toggle Button voor Studio -->
+								<div class="toggle-container" style="text-align: center; margin-bottom: 2em;">
+									<button class="price-toggle-btn" onclick="togglePriceType('studio')">
+										Bekijk 10-beurtenkaarten
+									</button>
+								</div>
 
 							<!-- Wekelijkse Pakketten Studio -->
-							<div id="studio-weekly" class="row aln-center">
+							<div id="studio-weekly" class="row aln-center" style="width: 100%;">
 								
 								<!-- Studio Basic -->
 								<div class="col-4 col-12-medium">
@@ -244,16 +265,20 @@
 								
 							</div>
 						</div>
+						</div>
 
 						<!-- Aan Huis Pakketten -->
 						<div id="pricing-aanHuis" class="pricing-content" style="display: none;">
 							<div class="title" id="aanhuis-tarieven">Training Aan Huis</div>
-							<p style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 1em;">
-								Persoonlijke begeleiding in jouw vertrouwde omgeving
+							<p id="aanhuis-description-weekly" style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 1em; max-width: 800px; margin-left: auto; margin-right: auto;">
+								Train <strong>Aan Huis</strong> met wekelijkse begeleiding. Ik kom naar jou toe op vaste momenten, je betaalt per week en krijgt persoonlijke coaching in je eigen vertrouwde omgeving.
+							</p>
+							<p id="aanhuis-description-sessions" style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 1em; max-width: 800px; margin-left: auto; margin-right: auto; display: none;">
+								Koop een 10-beurtenkaart voor flexibele training <strong>Aan Huis</strong>. Plan je sessies wanneer het jou uitkomt en geniet van persoonlijke begeleiding in je eigen omgeving zonder vast wekelijks schema.
 							</p>
 							
 							<!-- Toggle Button voor Aan Huis -->
-							<div style="text-align: center; margin-bottom: 2em;">
+							<div class="toggle-container" style="text-align: center; margin-bottom: 2em;">
 								<button class="price-toggle-btn" onclick="togglePriceType('aanHuis')">
 									Bekijk 10-beurtenkaarten
 								</button>
@@ -366,6 +391,7 @@
 								</div>
 								
 							</div>
+						</div>
 						</div>
 
 					</div>
@@ -601,16 +627,22 @@
 					const weeklyDiv = document.getElementById(location + '-weekly');
 					const sessionsDiv = document.getElementById(location + '-10sessions');
 					const buttons = document.querySelectorAll('#pricing-' + location + ' .price-toggle-btn');
+					const weeklyDesc = document.getElementById(location + '-description-weekly');
+					const sessionsDesc = document.getElementById(location + '-description-sessions');
 					
 					if (weeklyDiv.style.display === 'none') {
 						// Toon wekelijkse pakketten
 						weeklyDiv.style.display = 'flex';
 						sessionsDiv.style.display = 'none';
+						weeklyDesc.style.display = 'block';
+						sessionsDesc.style.display = 'none';
 						buttons.forEach(btn => btn.textContent = 'Bekijk 10-beurtenkaarten');
 					} else {
 						// Toon 10-beurtenkaarten
 						weeklyDiv.style.display = 'none';
 						sessionsDiv.style.display = 'flex';
+						weeklyDesc.style.display = 'none';
+						sessionsDesc.style.display = 'block';
 						buttons.forEach(btn => btn.textContent = 'Bekijk wekelijkse pakketten');
 					}
 				}
