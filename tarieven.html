@@ -202,14 +202,13 @@
 							
 							<!-- NIEUWE Dropdown voor Studio -->
 							<div class="payment-selector">
-								<label class="payment-selector-label" for="studio-payment-type">
-									<i class="fas fa-credit-card" style="margin-right: 8px; color: #3498DB;"></i>
-									Kies je betaalwijze:
+								<label class="payment-selector-label" for="aanhuis-payment-type">
+									Maak je keuze:
 								</label>
 								<div class="custom-select-wrapper">
-									<select id="studio-payment-type" class="custom-select" onchange="togglePriceType('studio', this.value)">
-										<option value="weekly">📅 Wekelijks betalen - vaste trainingsmomenten</option>
-										<option value="sessions">🎫 10-Beurtenkaart - flexibel plannen</option>
+									<select id="aanhuis-payment-type" class="custom-select" onchange="togglePriceType('aanhuis', this.value)">
+										<option value="weekly">🗓️ Wekelijkse paketten</option>
+										<option value="sessions">🎫 10-Beurtenkaarten</option>
 									</select>
 								</div>
 							</div>
@@ -357,7 +356,7 @@
 							<!-- NIEUWE Dropdown voor Aan Huis -->
 							<div class="payment-selector">
 								<label class="payment-selector-label" for="aanhuis-payment-type">
-									Kies jouw pakket:
+									Maak je keuze:
 								</label>
 								<div class="custom-select-wrapper">
 									<select id="aanhuis-payment-type" class="custom-select" onchange="togglePriceType('aanhuis', this.value)">
