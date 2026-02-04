@@ -181,11 +181,10 @@
 						<!-- Tab Buttons -->
 						<div style="text-align: center; margin-bottom: 3em;">
 							<div style="display: inline-block; background: #f5f5f5; border-radius: 50px; padding: 8px;">
-
 								<button onclick="showPricing('studio')" id="tab-studio" style="padding: 15px 40px; border: none; background: #3498DB; color: white; border-radius: 50px; font-size: 1.1em; font-weight: bold; cursor: pointer; margin: 0 5px; transition: all 0.3s; display: inline-flex; align-items: center; justify-content: center;">
 									Training in de Studio
 								</button>
-								<button onclick="showPricing('aanHuis')" id="tab-aanHuis" style="padding: 15px 40px; border: none; background: transparent; color: #666; border-radius: 50px; font-size: 1.1em; font-weight: bold; cursor: pointer; margin: 0 5px; transition: all 0.3s; display: inline-flex; align-items: center; justify-content: center;">
+								<button onclick="showPricing('aanhuis')" id="tab-aanhuis" style="padding: 15px 40px; border: none; background: transparent; color: #666; border-radius: 50px; font-size: 1.1em; font-weight: bold; cursor: pointer; margin: 0 5px; transition: all 0.3s; display: inline-flex; align-items: center; justify-content: center;">
 									Training Aan Huis
 								</button>
 							</div>
@@ -344,10 +343,9 @@
 								
 							</div>
 						</div>
-						</div>
 
 						<!-- Aan Huis Pakketten -->
-						<div id="pricing-aanHuis" class="pricing-content" style="display: none;">
+						<div id="pricing-aanhuis" class="pricing-content" style="display: none;">
 							<div class="title" id="aanhuis-tarieven">Training Aan Huis</div>
 							<p id="aanhuis-description-weekly" style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 1em; max-width: 800px; margin-left: auto; margin-right: auto;">
 								Train <strong>Aan Huis</strong> met wekelijkse begeleiding. Ik kom naar jou toe op vaste momenten, je betaalt per week en krijgt persoonlijke coaching in je eigen vertrouwde omgeving.
@@ -370,7 +368,7 @@
 							</div>
 
 							<!-- Wekelijkse Pakketten Aan Huis -->
-							<div id="aanHuis-weekly" class="row aln-center">
+							<div id="aanhuis-weekly" class="row aln-center">
 								
 								<!-- Aan Huis Basic -->
 								<div class="col-4 col-12-medium">
@@ -437,7 +435,7 @@
 							</div>
 
 							<!-- 10-Beurtenkaarten Aan Huis -->
-							<div id="aanHuis-10sessions" class="row aln-center" style="display: none;">
+							<div id="aanhuis-10sessions" class="row aln-center" style="display: none;">
 								
 								<!-- Aan Huis PT -->
 								<div class="col-4 col-12-medium">
@@ -457,7 +455,7 @@
 									</section>
 								</div>
 								
-								<!-- Aan Huis DUO (Highlighted) -->
+								<!-- Aan Huis DUO -->
 								<div class="col-4 col-12-medium">
 									<section class="highlight" style="border: 2px solid #e0e0e0; border-radius: 12px; padding: 2em; background-color: #E8F4F8;">
 										<h3>DUO</h3>
@@ -476,7 +474,6 @@
 								</div>
 								
 							</div>
-						</div>
 						</div>
 
 					</div>
@@ -527,7 +524,7 @@
 				</section>
 
 			<!-- Extra Info - Aan Huis -->
-				<section id="info-aanHuis" class="wrapper style2" style="display: none;">
+				<section id="info-aanhuis" class="wrapper style2" style="display: none;">
 					<div class="container">
 						<header class="style1">
 							<h2>Wat je krijgt bij Training Aan Huis</h2>
@@ -681,17 +678,17 @@
 				function showPricing(type) {
 					// Verberg beide pricing secties
 					document.getElementById('pricing-studio').style.display = 'none';
-					document.getElementById('pricing-aanHuis').style.display = 'none';
+					document.getElementById('pricing-aanhuis').style.display = 'none';
 					
 					// Verberg beide info secties
 					document.getElementById('info-studio').style.display = 'none';
-					document.getElementById('info-aanHuis').style.display = 'none';
+					document.getElementById('info-aanhuis').style.display = 'none';
 					
 					// Update tab buttons
 					document.getElementById('tab-studio').style.background = 'transparent';
 					document.getElementById('tab-studio').style.color = '#666';
-					document.getElementById('tab-aanHuis').style.background = 'transparent';
-					document.getElementById('tab-aanHuis').style.color = '#666';
+					document.getElementById('tab-aanhuis').style.background = 'transparent';
+					document.getElementById('tab-aanhuis').style.color = '#666';
 					
 					// Toon de geselecteerde sectie
 					if (type === 'studio') {
@@ -700,10 +697,10 @@
 						document.getElementById('tab-studio').style.background = '#3498DB';
 						document.getElementById('tab-studio').style.color = 'white';
 					} else {
-						document.getElementById('pricing-aanHuis').style.display = 'block';
-						document.getElementById('info-aanHuis').style.display = 'block';
-						document.getElementById('tab-aanHuis').style.background = '#3498DB';
-						document.getElementById('tab-aanHuis').style.color = 'white';
+						document.getElementById('pricing-aanhuis').style.display = 'block';
+						document.getElementById('info-aanhuis').style.display = 'block';
+						document.getElementById('tab-aanhuis').style.background = '#3498DB';
+						document.getElementById('tab-aanhuis').style.color = 'white';
 					}
 				}
 
