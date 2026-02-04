@@ -19,11 +19,10 @@
 				margin-top: 0.3em;
 			}
 			
-			/* NIEUWE Dropdown Selector */
+			/* NIEUWE Segmented Control met iconen */
 			.payment-selector {
 				text-align: center;
-				margin: 2.5em auto;
-				max-width: 500px;
+				margin: 2.5em 0;
 			}
 			
 			.payment-selector-label {
@@ -32,80 +31,83 @@
 				color: #555;
 				margin-bottom: 1em;
 				font-weight: 600;
-				text-align: left;
 			}
 			
-			.custom-select-wrapper {
-				position: relative;
-				width: 100%;
-			}
-			
-			.custom-select {
-				appearance: none;
-				-webkit-appearance: none;
-				-moz-appearance: none;
-				width: 100%;
-				padding: 18px 50px 18px 20px;
-				font-size: 1.05em;
-				font-weight: 600;
-				color: #333;
-				background: white;
+			.segmented-control {
+				display: inline-flex;
+				background: #ffffff;
 				border: 2px solid #e0e0e0;
 				border-radius: 12px;
+				padding: 4px;
+				box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+				gap: 4px;
+			}
+			
+			.segment-option {
+				padding: 16px 32px;
+				border: none;
+				background: transparent;
+				color: #666;
+				border-radius: 10px;
+				font-size: 1em;
+				font-weight: 600;
 				cursor: pointer;
 				transition: all 0.3s ease;
-				box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				white-space: nowrap;
 			}
 			
-			.custom-select:hover {
-				border-color: #3498DB;
-				box-shadow: 0 4px 12px rgba(52, 152, 219, 0.15);
+			.segment-option i {
+				font-size: 1.3em;
 			}
 			
-			.custom-select:focus {
-				outline: none;
-				border-color: #3498DB;
-				box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+			.segment-option:hover {
+				background: #f8f8f8;
 			}
 			
-			.custom-select-wrapper::after {
-				content: '\f078';
-				font-family: 'Font Awesome 6 Free';
-				font-weight: 900;
-				position: absolute;
-				right: 20px;
-				top: 50%;
-				transform: translateY(-50%);
-				color: #3498DB;
-				font-size: 1.1em;
-				pointer-events: none;
+			.segment-option.active {
+				background: linear-gradient(135deg, #3498DB 0%, #2980B9 100%);
+				color: white;
+				box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
 			}
 			
-			/* Icon binnen de select opties */
-			.custom-select option {
-				padding: 12px;
-				font-size: 1em;
+			.segment-option.active:hover {
+				background: linear-gradient(135deg, #2980B9 0%, #21618C 100%);
 			}
 			
-			/* Mobiel aanpassingen */
+			/* Mobiel aanpassingen voor Segmented Control */
 			@media screen and (max-width: 980px) {
-				.payment-selector {
-					max-width: 100%;
-					padding: 0 15px;
+				.segment-option {
+					padding: 14px 24px;
+					font-size: 0.95em;
 				}
-				.custom-select {
-					padding: 16px 45px 16px 18px;
-					font-size: 1em;
+				.segment-option i {
+					font-size: 1.2em;
+				}
+			}
+			
+			@media screen and (max-width: 736px) {
+				.segmented-control {
+					flex-direction: column;
+					width: 100%;
+					max-width: 320px;
+				}
+				.segment-option {
+					width: 100%;
+					justify-content: center;
+					padding: 16px;
 				}
 			}
 			
 			@media screen and (max-width: 480px) {
-				.custom-select {
-					padding: 14px 40px 14px 16px;
-					font-size: 0.95em;
+				.segment-option {
+					padding: 14px;
+					font-size: 0.9em;
 				}
-				.payment-selector-label {
-					font-size: 1em;
+				.segment-option i {
+					font-size: 1.1em;
 				}
 			}
 			
@@ -201,17 +203,18 @@
 								Koop een 10-beurtenkaart voor flexibele training in de Studio. Plan je sessies wanneer het jou uitkomt en profiteer van persoonlijke begeleiding zonder vast wekelijks schema.
 							</p>
 							
-							<!-- NIEUWE Dropdown voor Studio -->
+							<!-- NIEUWE Segmented Control voor Studio -->
 							<div class="payment-selector">
-								<label class="payment-selector-label" for="studio-payment-type">
-									<i class="fas fa-credit-card" style="margin-right: 8px; color: #3498DB;"></i>
-									Kies je betaalwijze:
-								</label>
-								<div class="custom-select-wrapper">
-									<select id="studio-payment-type" class="custom-select" onchange="togglePriceType('studio', this.value)">
-										<option value="weekly">📅 Wekelijks betalen - vaste trainingsmomenten</option>
-										<option value="sessions">🎫 10-Beurtenkaart - flexibel plannen</option>
-									</select>
+								<label class="payment-selector-label">Kies je betaalwijze:</label>
+								<div class="segmented-control">
+									<button class="segment-option active" id="studio-weekly-btn" onclick="togglePriceType('studio', 'weekly')">
+										<i class="fas fa-calendar-week"></i>
+										<span>Wekelijks betalen</span>
+									</button>
+									<button class="segment-option" id="studio-sessions-btn" onclick="togglePriceType('studio', 'sessions')">
+										<i class="fas fa-ticket-alt"></i>
+										<span>10-Beurtenkaart</span>
+									</button>
 								</div>
 							</div>
 
@@ -323,17 +326,18 @@
 								Koop een 10-beurtenkaart voor flexibele training bij jou thuis. Plan je sessies wanneer het jou uitkomt en profiteer van persoonlijke begeleiding zonder vast wekelijks schema.
 							</p>
 							
-							<!-- NIEUWE Dropdown voor Aan Huis -->
+							<!-- NIEUWE Segmented Control voor Aan Huis -->
 							<div class="payment-selector">
-								<label class="payment-selector-label" for="aanhuis-payment-type">
-									<i class="fas fa-credit-card" style="margin-right: 8px; color: #3498DB;"></i>
-									Kies je betaalwijze:
-								</label>
-								<div class="custom-select-wrapper">
-									<select id="aanhuis-payment-type" class="custom-select" onchange="togglePriceType('aanhuis', this.value)">
-										<option value="weekly">📅 Wekelijks betalen - vaste trainingsmomenten</option>
-										<option value="sessions">🎫 10-Beurtenkaart - flexibel plannen</option>
-									</select>
+								<label class="payment-selector-label">Kies je betaalwijze:</label>
+								<div class="segmented-control">
+									<button class="segment-option active" id="aanhuis-weekly-btn" onclick="togglePriceType('aanhuis', 'weekly')">
+										<i class="fas fa-calendar-week"></i>
+										<span>Wekelijks betalen</span>
+									</button>
+									<button class="segment-option" id="aanhuis-sessions-btn" onclick="togglePriceType('aanhuis', 'sessions')">
+										<i class="fas fa-ticket-alt"></i>
+										<span>10-Beurtenkaart</span>
+									</button>
 								</div>
 							</div>
 
@@ -619,18 +623,29 @@
 					const weeklyDesc = document.getElementById(location + '-description-weekly');
 					const sessionsDesc = document.getElementById(location + '-description-sessions');
 					
+					const weeklyBtn = document.getElementById(location + '-weekly-btn');
+					const sessionsBtn = document.getElementById(location + '-sessions-btn');
+					
 					if (type === 'weekly') {
 						// Toon wekelijkse pakketten
 						weeklyDiv.style.display = 'flex';
 						sessionsDiv.style.display = 'none';
 						weeklyDesc.style.display = 'block';
 						sessionsDesc.style.display = 'none';
+						
+						// Update buttons
+						weeklyBtn.classList.add('active');
+						sessionsBtn.classList.remove('active');
 					} else {
 						// Toon 10-beurtenkaarten
 						weeklyDiv.style.display = 'none';
 						sessionsDiv.style.display = 'flex';
 						weeklyDesc.style.display = 'none';
 						sessionsDesc.style.display = 'block';
+						
+						// Update buttons
+						weeklyBtn.classList.remove('active');
+						sessionsBtn.classList.add('active');
 					}
 				}
 
@@ -643,8 +658,6 @@
 						showPricing('studio');
 						// Zorg ervoor dat wekelijkse tarieven getoond worden
 						togglePriceType('studio', 'weekly');
-						// Reset dropdown to weekly
-						document.getElementById('studio-payment-type').value = 'weekly';
 						// Smooth scroll naar de sectie
 						setTimeout(function() {
 							document.getElementById('studio-tarieven').scrollIntoView({ 
@@ -657,8 +670,6 @@
 						showPricing('aanHuis');
 						// Zorg ervoor dat wekelijkse tarieven getoond worden
 						togglePriceType('aanhuis', 'weekly');
-						// Reset dropdown to weekly
-						document.getElementById('aanhuis-payment-type').value = 'weekly';
 						// Smooth scroll naar de sectie
 						setTimeout(function() {
 							document.getElementById('aanhuis-tarieven').scrollIntoView({ 
