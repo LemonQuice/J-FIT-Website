@@ -202,11 +202,11 @@
 							
 							<!-- NIEUWE Dropdown voor Studio -->
 							<div class="payment-selector">
-								<label class="payment-selector-label" for="aanhuis-payment-type">
+								<label class="payment-selector-label" for="studio-payment-type">
 									Maak je keuze:
 								</label>
 								<div class="custom-select-wrapper">
-									<select id="aanhuis-payment-type" class="custom-select" onchange="togglePriceType('aanhuis', this.value)">
+									<select id="studio-payment-type" class="custom-select" onchange="togglePriceType('studio', this.value)">
 										<option value="weekly">🗓️ Wekelijkse paketten</option>
 										<option value="sessions">🎫 10-Beurtenkaarten</option>
 									</select>
@@ -689,6 +689,17 @@
 					document.getElementById('tab-aanhuis').style.background = 'transparent';
 					document.getElementById('tab-aanhuis').style.color = '#666';
 					
+					// Reset dropdowns naar "Wekelijkse pakketten" (hoofdverdienmodel)
+					document.getElementById('studio-payment-type').value = 'weekly';
+					document.getElementById('aanhuis-payment-type').value = 'weekly';
+					
+					// Reset altijd naar wekelijkse pakketten bij wisselen
+					if (type === 'studio') {
+						togglePriceType('studio', 'weekly');
+					} else {
+						togglePriceType('aanhuis', 'weekly');
+					}
+					
 					// Toon de geselecteerde sectie
 					if (type === 'studio') {
 						document.getElementById('pricing-studio').style.display = 'block';
@@ -725,22 +736,22 @@
 					}
 				}
 				
-				// Initialiseer - NIET meer nodig voor dropdown
+				// Initialiseer de pagina
 				window.addEventListener('DOMContentLoaded', function() {
-					// Dropdown heeft geen initialisatie nodig
-				});
-
-				// Handle anchor links voor directe navigatie naar studio of aan huis tarieven
-				window.addEventListener('DOMContentLoaded', function() {
+					// Reset beide dropdowns naar wekelijkse pakketten
+					document.getElementById('studio-payment-type').value = 'weekly';
+					document.getElementById('aanhuis-payment-type').value = 'weekly';
+					
+					// Toon initieel de wekelijkse pakketten
+					togglePriceType('studio', 'weekly');
+					togglePriceType('aanhuis', 'weekly');
+					
+					// Handle anchor links voor directe navigatie naar studio of aan huis tarieven
 					const hash = window.location.hash;
 					
 					if (hash === '#studio-tarieven') {
 						// Open studio tab
 						showPricing('studio');
-						// Zorg ervoor dat wekelijkse tarieven getoond worden
-						togglePriceType('studio', 'weekly');
-						// Reset dropdown to weekly
-						document.getElementById('studio-payment-type').value = 'weekly';
 						// Smooth scroll naar de sectie
 						setTimeout(function() {
 							document.getElementById('studio-tarieven').scrollIntoView({ 
@@ -751,10 +762,6 @@
 					} else if (hash === '#aanhuis-tarieven') {
 						// Open aan huis tab
 						showPricing('aanhuis');
-						// Zorg ervoor dat wekelijkse tarieven getoond worden
-						togglePriceType('aanhuis', 'weekly');
-						// Reset dropdown to weekly
-						document.getElementById('aanhuis-payment-type').value = 'weekly';
 						// Smooth scroll naar de sectie
 						setTimeout(function() {
 							document.getElementById('aanhuis-tarieven').scrollIntoView({ 
@@ -763,6 +770,9 @@
 							});
 						}, 100);
 					}
+					
+					// Pas iframe hoogtes aan voor mobiel
+					adjustIframeHeight();
 				});
 
 				// Functie om iframe hoogte dynamisch aan te passen voor mobiel
