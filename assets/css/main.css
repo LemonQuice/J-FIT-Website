@@ -3001,7 +3001,7 @@ input, select, textarea {
 
 /* Pricing Packages */
 #highlights .highlight {
-    background: #66ADDC url("images/overlay.png");
+    background: #3498db url("images/overlay.png");
     padding: 2.5em;
     border-radius: 0.5em;
     text-align: center;
@@ -3061,14 +3061,14 @@ input, select, textarea {
 
 #highlights .highlight .button {
     background: #fff;
-    color: #66ADDC;
+    color: #3498db;
     font-weight: 900;
     width: 100%;
 }
 
 #highlights .highlight .button:hover {
     background: rgba(255, 255, 255, 0.9);
-    color: #4A8BB8;
+    color: #2980b9;
 }
 
 /* Responsive aanpassingen */
