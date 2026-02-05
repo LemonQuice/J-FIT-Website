@@ -163,6 +163,11 @@
 					<div class="container">
     					<header class="style1">
         					<h2>Start vandaag nog met jouw transformatie</h2>
+							<ul class="actions">
+            					<li>
+               						 <a href="tarieven.html#tarieven-pakketten" class="button style3 large">Start Nu</a>
+            					</li>
+       						</ul>
         					<p>
     						Twijfel je nog of personal training iets voor jou is?<br /> Neem vrijblijvend contact op via het onderstaande formulier.<br />
    							 Samen bespreken we jouw doelen en hoe ik je kan helpen deze te bereiken.
@@ -171,11 +176,14 @@
 						<div class="row">
 							<div class="col-6 col-12-medium">
 
-								<!-- Google Form Embed -->
-								<div style="border: 3px solid #282b34; border-radius: 8px; padding: 10px; background-color: #282b34; position: relative;">
-									<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfsoxmNbSSgSzlNPjgULJ0KvNm49BisNiJ_RP4KGY4vq7INbA/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Laden…</iframe>
-									<div style="position: absolute; bottom: 10px; left: 10px; right: 10px; height: 90px; background-color: #282b34; border-radius: 0 0 5px 5px;"></div>
-								</div>
+<!-- Google Form Embed -->
+<div id="footer-form-container" class="form-container" style="border: 3px solid #282b34; border-radius: 8px; padding: 10px; background-color: #282b34; position: relative;">
+	<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfsoxmNbSSgSzlNPjgULJ0KvNm49BisNiJ_RP4KGY4vq7INbA/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Laden…</iframe>
+	<!-- Overlay om Google branding te verbergen - extra breed voor scrollbar -->
+	<div id="footer-form-overlay" style="position: absolute; bottom: 10px; left: 10px; right: 0; height: 97px; background-color: #282b34; border-radius: 0 0 5px 5px;"></div>
+</div>
+
+
 
 							</div>
 							<div class="col-6 col-12-medium">
@@ -195,9 +203,9 @@
 												<section>
 													<h3 class="icon solid fa-comment">Social</h3>
 													<p>
-														<a href="https://www.instagram.com/jfit_belgium" target="_blank" rel="noopener noreferrer">@jfit_belgium</a><br />
-														<a href="https://www.linkedin.com/in/jelle-JFIT/" target="_blank" rel="noopener noreferrer">linkedin.com/in/jelle-JFIT</a><br />
-														<a href="https://www.facebook.com/untitled" target="_blank" rel="noopener noreferrer">facebook.com/untitled</a>
+														<a href="https://www.instagram.com/jfit_belgium" target="_blank" rel="noopener noreferrer">instagram.com/J-FIT</a><br />
+														<a href="https://www.linkedin.com/in/jelle-JFIT/" target="_blank" rel="noopener noreferrer">linkedin.com/J-FIT</a><br />
+														<a href="https://www.facebook.com/profile.php?id=61587398490745" target="_blank" rel="noopener noreferrer">facebook.com/J-FIT</a>
 													</p>
 												</section>
 											</div>
@@ -205,7 +213,7 @@
 												<section>
 													<h3 class="icon solid fa-envelope">Email</h3>
 													<p>
-														<a href="mailto:info@j-fit.be">info@j-fit.be</a>
+														<a href="/cdn-cgi/l/email-protection#741d1a121b341e59121d005a1611"><span class="__cf_email__" data-cfemail="7d14131b123d17501b1409531f18">[email&#160;protected]</span></a>
 													</p>
 												</section>
 											</div>
@@ -222,9 +230,16 @@
 
 							</div>
 						</div>
+						
+						<!-- Partner van Beweegcoach -->
+<div style="text-align: center; margin: 3em 0 1.5em 0;">
+	<p style="margin-bottom: 0.5em; font-size: 0.9em; color: #999;">Partner van BeweegCoach</p>
+	<img src="images/beweegcoach_logo.png" alt="Beweegcoach" style="max-width: 200px; height: auto;" />
+</div>
+						
 						<div id="copyright">
 							<ul>
-								<li>&copy; <script>document.write(new Date().getFullYear());</script> J-Fit.be.</li>
+								<li>&copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> J-Fit.be.</li>
 							</ul>
 						</div>
 					</div>
@@ -239,6 +254,152 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<script>
+				// Functie om tussen Studio en Aan Huis te wisselen
+				function showPricing(type) {
+					// Verberg beide pricing secties
+					document.getElementById('pricing-studio').style.display = 'none';
+					document.getElementById('pricing-aanhuis').style.display = 'none';
+					
+					// Verberg beide info secties
+					document.getElementById('info-studio').style.display = 'none';
+					document.getElementById('info-aanhuis').style.display = 'none';
+					
+					// Update tab buttons
+					document.getElementById('tab-studio').style.background = 'transparent';
+					document.getElementById('tab-studio').style.color = '#666';
+					document.getElementById('tab-aanhuis').style.background = 'transparent';
+					document.getElementById('tab-aanhuis').style.color = '#666';
+					
+					// Reset dropdowns naar "Wekelijkse pakketten" (hoofdverdienmodel)
+					document.getElementById('studio-payment-type').value = 'weekly';
+					document.getElementById('aanhuis-payment-type').value = 'weekly';
+					
+					// Reset altijd naar wekelijkse pakketten bij wisselen
+					if (type === 'studio') {
+						togglePriceType('studio', 'weekly');
+					} else {
+						togglePriceType('aanhuis', 'weekly');
+					}
+					
+					// Toon de geselecteerde sectie
+					if (type === 'studio') {
+						document.getElementById('pricing-studio').style.display = 'block';
+						document.getElementById('info-studio').style.display = 'block';
+						document.getElementById('tab-studio').style.background = '#3498DB';
+						document.getElementById('tab-studio').style.color = 'white';
+					} else {
+						document.getElementById('pricing-aanhuis').style.display = 'block';
+						document.getElementById('info-aanhuis').style.display = 'block';
+						document.getElementById('tab-aanhuis').style.background = '#3498DB';
+						document.getElementById('tab-aanhuis').style.color = 'white';
+					}
+				}
+
+				// Functie om tussen wekelijkse pakketten en 10-beurtenkaarten te wisselen
+				function togglePriceType(location, type) {
+					const weeklyDiv = document.getElementById(location + '-weekly');
+					const sessionsDiv = document.getElementById(location + '-10sessions');
+					const weeklyDesc = document.getElementById(location + '-description-weekly');
+					const sessionsDesc = document.getElementById(location + '-description-sessions');
+					
+					if (type === 'weekly') {
+						// Toon wekelijkse pakketten
+						weeklyDiv.style.display = 'flex';
+						sessionsDiv.style.display = 'none';
+						weeklyDesc.style.display = 'block';
+						sessionsDesc.style.display = 'none';
+					} else {
+						// Toon 10-beurtenkaarten
+						weeklyDiv.style.display = 'none';
+						sessionsDiv.style.display = 'flex';
+						weeklyDesc.style.display = 'none';
+						sessionsDesc.style.display = 'block';
+					}
+				}
+				
+				// Initialiseer de pagina
+				window.addEventListener('DOMContentLoaded', function() {
+					// Reset beide dropdowns naar wekelijkse pakketten
+					document.getElementById('studio-payment-type').value = 'weekly';
+					document.getElementById('aanhuis-payment-type').value = 'weekly';
+					
+					// Toon initieel de wekelijkse pakketten
+					togglePriceType('studio', 'weekly');
+					togglePriceType('aanhuis', 'weekly');
+					
+					// Handle anchor links voor directe navigatie naar studio of aan huis tarieven
+					const hash = window.location.hash;
+					
+					if (hash === '#studio-tarieven') {
+						// Open studio tab
+						showPricing('studio');
+						// Smooth scroll naar de sectie
+						setTimeout(function() {
+							document.getElementById('studio-tarieven').scrollIntoView({ 
+								behavior: 'smooth',
+								block: 'start'
+							});
+						}, 100);
+					} else if (hash === '#aanhuis-tarieven') {
+						// Open aan huis tab
+						showPricing('aanhuis');
+						// Smooth scroll naar de sectie
+						setTimeout(function() {
+							document.getElementById('aanhuis-tarieven').scrollIntoView({ 
+								behavior: 'smooth',
+								block: 'start'
+							});
+						}, 100);
+					}
+					
+					// Pas iframe hoogtes aan voor mobiel
+					adjustIframeHeight();
+				});
+
+				// Functie om iframe hoogte dynamisch aan te passen voor mobiel
+				function adjustIframeHeight() {
+					if (window.innerWidth <= 980) {
+						const iframes = document.querySelectorAll('.form-container iframe');
+						iframes.forEach(function(iframe) {
+							// Probeer de hoogte van de iframe content te detecteren
+							try {
+								iframe.style.height = 'auto';
+								iframe.style.minHeight = '1400px';
+							} catch(e) {
+								console.log('Cannot access iframe content');
+							}
+						});
+
+						// Pas de footer form container aan
+						const footerContainer = document.getElementById('footer-form-container');
+						if (footerContainer) {
+							const footerIframe = footerContainer.querySelector('iframe');
+							if (footerIframe) {
+								// Luister naar berichten van de iframe over hoogte veranderingen
+								window.addEventListener('message', function(e) {
+									if (e.origin === 'https://docs.google.com') {
+										try {
+											const data = JSON.parse(e.data);
+											if (data && data.height) {
+												footerContainer.style.minHeight = data.height + 'px';
+												footerIframe.style.height = data.height + 'px';
+											}
+										} catch(err) {
+											// Ignore parsing errors
+										}
+									}
+								});
+							}
+						}
+					}
+				}
+
+				// Voer uit bij laden en bij resize
+				window.addEventListener('load', adjustIframeHeight);
+				window.addEventListener('resize', adjustIframeHeight);
+			</script>
 
 	</body>
 </html>
