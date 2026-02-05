@@ -109,6 +109,42 @@
 				}
 			}
 			
+			/* Scrollbar styling voor Google Form iframes */
+			#footer-form-container iframe,
+			#signup-form-container iframe {
+				scrollbar-width: thin;
+				scrollbar-color: #3498DB #f5f5f5;
+			}
+			
+			#footer-form-container iframe::-webkit-scrollbar,
+			#signup-form-container iframe::-webkit-scrollbar {
+				width: 12px;
+			}
+			
+			#footer-form-container iframe::-webkit-scrollbar-track {
+				background: #282b34;
+				border-radius: 10px;
+			}
+			
+			#signup-form-container iframe::-webkit-scrollbar-track {
+				background: #f5f5f5;
+				border-radius: 10px;
+			}
+			
+			#footer-form-container iframe::-webkit-scrollbar-thumb,
+			#signup-form-container iframe::-webkit-scrollbar-thumb {
+				background: #3498DB;
+				border-radius: 10px;
+				border: 2px solid transparent;
+				background-clip: padding-box;
+			}
+			
+			#footer-form-container iframe::-webkit-scrollbar-thumb:hover,
+			#signup-form-container iframe::-webkit-scrollbar-thumb:hover {
+				background: #2980b9;
+				background-clip: padding-box;
+			}
+			
 			/* Google Form iframe styling voor mobiel */
 			@media screen and (max-width: 980px) {
 				.form-container {
@@ -590,8 +626,10 @@
       <h2>Schrijf je in voor een kennismaking</h2>
       <p>Vul het formulier hieronder in en ik neem snel contact met je op.</p>
     </header>
-	<div class="form-container" style="max-width: 800px; margin: 0 auto;">
+	<div id="signup-form-container" class="form-container" style="max-width: 800px; margin: 0 auto; border: 3px solid #e0e0e0; border-radius: 8px; padding: 10px; background-color: #ffffff; position: relative;">
 		<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfH3ULBhYoF6ktbaTzUN0AA4_77bRLahz-pcQ3a61Y43TkDnQ/viewform?embedded=true" width="100%" height="1800" frameborder="0" marginheight="0" marginwidth="0">Laden…</iframe>
+		<!-- Overlay om Google branding te verbergen -->
+		<div style="position: absolute; bottom: 10px; left: 10px; right: 0; height: 95px; background-color: #ffffff; border-radius: 0 0 5px 5px;"></div>
 	</div>
   </div>
 </section>
@@ -619,8 +657,8 @@
 <!-- Google Form Embed -->
 <div id="footer-form-container" class="form-container" style="border: 3px solid #282b34; border-radius: 8px; padding: 10px; background-color: #282b34; position: relative;">
 	<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfsoxmNbSSgSzlNPjgULJ0KvNm49BisNiJ_RP4KGY4vq7INbA/viewform?embedded=true" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Laden…</iframe>
-	<!-- Overlay om Google branding te verbergen -->
-	<div id="footer-form-overlay" style="position: absolute; bottom: 10px; left: 10px; right: 10px; height: 95px; background-color: #282b34; border-radius: 0 0 5px 5px;"></div>
+	<!-- Overlay om Google branding te verbergen - extra breed voor scrollbar -->
+	<div id="footer-form-overlay" style="position: absolute; bottom: 10px; left: 10px; right: 0; height: 95px; background-color: #282b34; border-radius: 0 0 5px 5px;"></div>
 </div>
 
 
