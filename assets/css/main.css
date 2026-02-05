@@ -1672,7 +1672,7 @@ input, select, textarea {
 		input[type="reset"].style1,
 		button.style1,
 		.button.style1 {
-			background: #3498db url("images/overlay.png");
+			background: #66ADDC url("images/overlay.png");
 			color: #fff;
 		}
 
@@ -1681,7 +1681,7 @@ input, select, textarea {
 			input[type="reset"].style1:hover,
 			button.style1:hover,
 			.button.style1:hover {
-				background-color: #5dade2;
+				background-color: #85C1E9;
 			}
 
 			input[type="button"].style1:active,
@@ -1850,7 +1850,7 @@ input, select, textarea {
 		}
 
 		.feature-list h3 {
-			color: #3498db !important;
+			color: #66ADDC !important;
 			margin: -0.35em 0 0.75em 0;
 			font-size: 1.15em;
 			letter-spacing: 0.05em;
@@ -2275,7 +2275,7 @@ input, select, textarea {
 	}
 
 		#highlights .highlight h3 {
-			color: #3498db;
+			color: #66ADDC;
 			margin: 0 0 0.75em 0;
 			font-size: 1.15em;
 			letter-spacing: 0.05em;
@@ -3001,7 +3001,7 @@ input, select, textarea {
 
 /* Pricing Packages */
 #highlights .highlight {
-    background: #3498db url("images/overlay.png");
+    background: #66ADDC url("images/overlay.png");
     padding: 2.5em;
     border-radius: 0.5em;
     text-align: center;
@@ -3061,14 +3061,14 @@ input, select, textarea {
 
 #highlights .highlight .button {
     background: #fff;
-    color: #3498db;
+    color: #66ADDC;
     font-weight: 900;
     width: 100%;
 }
 
 #highlights .highlight .button:hover {
     background: rgba(255, 255, 255, 0.9);
-    color: #2980b9;
+    color: #4A8BB8;
 }
 
 /* Responsive aanpassingen */
@@ -3158,7 +3158,7 @@ html {
 .feature-list h3:before {
     display: block;
     color: #fff;
-    background: #3498db; /* Blauwe achtergrond ipv donker grijs */
+    background: #66ADDC; /* Lichtblauwe achtergrond */
     border-radius: 50%;
     text-align: center;
     width: 2.2em;
@@ -3169,7 +3169,7 @@ html {
     top: 0;
     margin-top: 0;
     font-size: 0.9em;
-    box-shadow: 0 2px 5px rgba(52, 152, 219, 0.3);
+    box-shadow: 0 2px 5px rgba(102, 173, 220, 0.3);
 }
 
 .feature-list p {
@@ -3214,7 +3214,7 @@ html {
 .feature-list h3:before {
     display: block;
     color: #fff;
-    background: #3498db; /* Blauwe achtergrond ipv donker grijs */
+    background: #66ADDC; /* Lichtblauwe achtergrond */
     border-radius: 50%;
     text-align: center;
     width: 2.2em;
@@ -3225,7 +3225,7 @@ html {
     top: 0;
     margin-top: 0;
     font-size: 0.9em;
-    box-shadow: 0 2px 5px rgba(52, 152, 219, 0.3);
+    box-shadow: 0 2px 5px rgba(102, 173, 220, 0.3);
 }
 
 .feature-list p {
